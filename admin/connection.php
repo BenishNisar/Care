@@ -6,6 +6,14 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>hello</h1>
+
+<?php
+$Db=mysqli_connect("localhost","root","","care");
+if(!$Db){
+    echo "connection failed";
+}
+error_reporting(0);
+?>
+    
 </body>
 </html>

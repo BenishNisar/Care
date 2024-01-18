@@ -198,60 +198,49 @@
         <ul class="nav">
           <li class="nav-item">
             <a class="nav-link" href="index.php">
-              <i class="mdi mdi-grid-large menu-icon"></i>
               <span class="menu-title">Dashboard</span>
             </a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="appointement.php">
-            <i class="fa-solid fa-calendar-check" ></i>
-              <span class="menu-title" style="margin-left:20px;">Slider</span>
-            </a>
-          </li>
+        
           
          
           <li class="nav-item">
-            <a class="nav-link" href="appointement.php">
-            <i class="fa-solid fa-calendar-check" ></i>
-              <span class="menu-title" style="margin-left:20px;">Appointement</span>
+            <a class="nav-link" href="appointementfetch.php">
+           
+              <span class="menu-title" >Appointement</span>
             </a>
           </li>
+        
           <li class="nav-item">
-            <a class="nav-link" href="openinghours.php">
-            <i class="fa-solid fa-calendar-check" ></i>
-              <span class="menu-title" style="margin-left:20px;">Opening Hours</span>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="cities.php">
-              <i class="mdi mdi-grid-large menu-icon"></i>
+            <a class="nav-link" href="diseasesfetch.php">
+            
               <span class="menu-title">Diseases</span>
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="cities.php">
-              <i class="mdi mdi-grid-large menu-icon"></i>
-              <span class="menu-title">MedicalNews</span>
+            <a class="nav-link" href="medicalnewsfetch.php">
+              
+  <span class="menu-title">MedicalNews</span>
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="cities.php">
-              <i class="mdi mdi-grid-large menu-icon"></i>
+            <a class="nav-link" href="medicalinventionsfetch.php">
+            
               <span class="menu-title">MedicalInventions</span>
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="cities.php">
-              <i class="mdi mdi-grid-large menu-icon"></i>
+            <a class="nav-link" href="citiesfetch.php">
+            
               <span class="menu-title">Cities</span>
             </a>
           </li>
        
 
           <li class="nav-item">
-            <a class="nav-link" href="doctordetails.php">
-              <i class="mdi mdi-grid-large menu-icon"></i>
-              <span class="menu-title">Doctordetails</span>
+            <a class="nav-link" href="websiteinformationfetch.php">
+            
+              <span class="menu-title">Website Information</span>
             </a>
           </li>
 
@@ -323,6 +312,6 @@
     
     
       <!-- main-panel ends -->
-    </div>
+    
     <!-- page-body-wrapper ends -->
   

@@ -17,9 +17,9 @@ color:blue;
 
 
 }
-
 </style>
   <!-- plugins:css -->
+
   <link rel="stylesheet" href="vendors/feather/feather.css">
   <link rel="stylesheet" href="vendors/mdi/css/materialdesignicons.min.css">
   <link rel="stylesheet" href="vendors/ti-icons/css/themify-icons.css">
@@ -36,7 +36,7 @@ color:blue;
   <!-- endinject -->
   <link rel="shortcut icon" href="images/favicon.png" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
 
 </head>
 <body>
@@ -45,14 +45,96 @@ color:blue;
    <?php
    include_once("header.php");
    ?>
+
+
+
+<main>
+ 
+
+
+
+
+   
+      <div class="col-md-12 col-lg-12"style="margin-left:20px;" >
+<h2>Cities</h2>
+        <form action="#" method="POST" class="needs-validation" novalidate>
+          <div class="row g-3">
+          <div class="col-sm-12 col-md-12 col-lg-12">
+              <label for="citiesname" class="form-label">Cities Name</label>
+              <input type="text" class="form-control" name="citiesname" id="user" placeholder="Enter a City Name"  required>
+              <div class="invalid-feedback">
+                Valid first name is required.
+              </div>
+            </div>
+ 
+
+
+
+
+         
+
+            
+
+
+       
+
+  
+
+
+
+          
+
+           
+
+  
+  
+
+
+
+
+
+
+  
+
+          <hr class="my-4">
+
+         
+
+        
+          
+
+          
+
+          <button class=" btn btn-primary text-light  float-right col-sm-4" name="submit" type="submit">Submit</button>
+        </form>
+      </div>
+    </div>
+  </main>
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
   
   <!-- container-scroller -->
+</div>
+
+
+
+
+
+
   
 </div>
-
-</div>
-
-
 <!-- footer -->
 
 <?php
@@ -83,6 +165,31 @@ include_once("footer.php");
   <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/js/all.min.js" integrity="sha512-GWzVrcGlo0TxTRvz9ttioyYJ+Wwk9Ck0G81D+eO63BaqHaJ3YZX9wuqjwgfcV/MrB2PhaVX9DkYVhbFpStnqpQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <!-- End custom js for this page-->
 </body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 
 </html>
 
+
+
+<?php
+if(isset($_POST["submit"])){
+    include("connection.php");
+    $CitiesName=$_POST["citiesname"];
+    
+   
+  
+
+  
+  
+$Query="INSERT INTO `cities`(`cityid`, `cityName`) VALUES (NULL,'$CitiesName')";
+
+
+mysqli_query($Db,$Query);
+
+echo "<script>window.location.href='citiesfetch.php';</script>";
+
+
+}
+
+
+?>

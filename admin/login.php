@@ -1,14 +1,14 @@
-
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <style>
-        /* Importing fonts from Google */
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<title>detail</title>
+</head>
+<style>
+/* Importing fonts from Google */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
 
 /* Reseting */
@@ -112,17 +112,58 @@ body {
         padding: 40px 15px 15px 15px;
     }
 }
-    </style>
-</head>
-<body>
-<div class="wrapper">
+</style>
+<body class="container display-4">
+<?php
+
+session_start();
+include("connection.php");
+include ('..translate.php');
+
+if(isset($_POST['submit'])){
+
+$admin_email=$_POST['email'];
+$admin_pswd=$_POST['admin_pswd'];
+
+if(empty($admin_email) || empty ($admin_pswd))
+{
+//$error_msg="filled all the requirements";
+}
+
+else
+
+{
+ $admin_query = "SELECT `id`, `username`, `email`, `password` FROM `login` WHERE `email` ='$admin_email' AND `password`='$admin_pswd'";
+
+	$check=mysqli_query($db,$admin_query);
+	
+	if(mysqli_num_rows($check)>0)
+	/*if($_POST['id']=='$id' && $_POST['pswd']=='$pswd')*/
+	
+	{
+	$check_row= mysqli_fetch_assoc($check);
+
+	echo "<script> window.location.href='index.php' </script> ";
+	}
+	else
+	{
+	$invalid_msg="Invalid user id / password ";
+	}
+
+}
+}
+?>
+
+
+  <!-- Login -->
+  <div class="wrapper">
         <div class="logo">
             <img src="https://www.freepnglogos.com/uploads/twitter-logo-png/twitter-bird-symbols-png-logo-0.png" alt="">
         </div>
         <div class="text-center mt-4 name">
             Care
         </div>
-        <form class="p-3 mt-3" action="#" method="POST">
+        <form class="p-3 mt-3" action="index.php" method="POST">
     <!-- Your form fields go here -->
     <div class="form-field d-flex align-items-center">
         <span class="far fa-user"></span>
@@ -130,7 +171,7 @@ body {
     </div>
     <div class="form-field d-flex align-items-center">
         <span class="fas fa-key"></span>
-        <input type="password" name="password" id="pwd" placeholder="Password">
+        <input type="password" name="admin_pswd" id="pwd" placeholder="Password">
     </div>
     <button class="btn mt-3" name="submit" type="submit">Login</button>
 </form>
@@ -139,29 +180,12 @@ body {
             <a href="#">Forget password?</a> or <a href="#">Sign up</a>
         </div>
     </div>
+ <?php
+if(isset($error_msg)){echo $error_msg;}
+if(isset($invalid_msg)){echo $invalid_msg;}
+?>
+
 
 
 </body>
 </html>
-<?php
-if(isset($_POST["submit"])) {
-    $Connection = mysqli_connect("localhost","root","","care");
-    $email = $_POST["email"];
-    $password = $_POST["password"];
-    $New = "SELECT `id`, `username`, `email`, `password` FROM `login` WHERE `email`='$email' AND `password`='$password'";
-    $result=mysqli_query($Connection,$New);
-    if (mysqli_num_rows($result) > 0) {
-        // Fetch the data
-        $data = mysqli_fetch_assoc($result);
- header("Location: index.php");
-        exit();
-    } else {
-        $error = "Invalid email or password";
-    }
-
-    mysqli_close($connection);
-}
-
-
-
-?>
