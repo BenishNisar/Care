@@ -40,24 +40,24 @@
     border-right:1px solid black;
     border-bottom:1px solid black;
   }
-  table{
+
+
+
+table{
  
- box-shadow:3px 3px 1px 1px black;
- text-align:center;
+    box-shadow:10px 10px 1px 1px black;
+    text-align:center;
 }
 table:hover{
- box-shadow:3px 3px 1px 1px blue;
+    box-shadow:10px 10px 1px 1px blue;
 }
-
-
-
 
 </style>
 
 
 </head>
 <body>
-  <div class="container-scroller"> 
+  <div class="container-scroller" style="background-color:skyblue"> 
     <!-- partial:partials/_navbar.html -->
    <?php
    include_once("header.php");
@@ -73,18 +73,23 @@ table:hover{
 
    
   </header>
-  <div style="float:right;" >
- <a style="text-decoration:none;color:white;" href="diseasesform.php" > <button class="btn btn-primary" class="btn btn-primary" style="width:150px;color:white;background-color:blue;border-top:1px solid white;border-right:1px solid white;border-bottom:1px solid white;border-left:1px solid white;border-radius:3px;text-decoration:none;margin-right:1px;border-radius:10px;">Add New</button></a>
-</div>
+  <div style="float:right;">
+ <a style="text-decoration:none;color:white;" href="patientrecordform.php" > <button class="btn btn-primary" style="width:150px;color:white;background-color:blue;border-top:1px solid white;border-right:1px solid white;border-bottom:1px solid white;border-left:1px solid white;border-radius:3px;text-decoration:none;margin-right:1px;border-radius:10px;">Add New</button>   </a>
+  </div>
   <div class="col-sm-12 col-md-12 col-lg-12">
    <table border="1px"   style="width:100%;" class="mt-5 text-white text-center">
             <tr class="text-white" style="border-right:1px solid black;">
                         <th >id</th>
-                        <th>Disease Name</th>
-                        <th>Descripation</th>
-                        <th>Preventation</th>
-                        <th>Cure</th>
-                        <th>Image</th>
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                        <th>Date Of Birth</th>
+             
+                  <th>Gender</th>
+                  <th>Email</th>
+                  <th>Phone Number</th>
+                  <th>Address</th>
+                  <th>Disease</th>
+
                       <th>Edit</th>
                       <th>Delete</th>
                    
@@ -93,7 +98,7 @@ table:hover{
 
                     <?php
 include("connection.php");
-$Query="SELECT * FROM `diseases`";
+$Query="SELECT * FROM `patientrecord`";
 $Response=mysqli_query($Db,$Query);
 if(mysqli_num_rows($Response)){
     while($Data=mysqli_fetch_array($Response)){
@@ -106,10 +111,14 @@ if(mysqli_num_rows($Response)){
     <td><?php echo $Data[2]; ?></td>
     <td><?php echo $Data[3]; ?></td>
     <td><?php echo $Data[4]; ?></td>
-    <td><img src="./images/<?php echo $Data[5];?>" width="100px" height="80px"></td>
+    <td><?php echo $Data[5]; ?></td>
+    <td><?php echo $Data[6]; ?></td>
+    <td><?php echo $Data[7]; ?></td>
+    <td><?php echo $Data[8]; ?></td>
+
     
-<td><a href="diseasesedit.php?id=<?php echo $Data[0]; ?>"><button class="btn btn-primary">Edit</button></a></td>
-    <td><a href="diseasesdelete.php?id=<?php echo $Data[0]; ?>"><button class="btn btn-primary">Delete</button></a></td>
+<td><a href="patientrecordedit.php?id=<?php echo $Data[0]; ?>"><button class="btn btn-primary">Edit</button></a></td>
+    <td><a href="patientrecorddelete.php?id=<?php echo $Data[0]; ?>"><button class="btn btn-primary">Delete</button></a></td>
    
 </tr>
 <?php
@@ -183,7 +192,7 @@ if(mysqli_num_rows($Response)){
 include_once("footer.php");
 ?>
    <script>
-        var images = ["./images/care.jpg", "./images/dis.jpg", "./images/bacteria.jpg"]; // Array of image sources
+        var images = ["./images/medicalinventions.jpg", "./images/medicalinventionstwo.jpg", "./images/medicalinventionsthree.jpg"]; // Array of image sources
         var imageIndex = 0; 
 
         // Function to change the image

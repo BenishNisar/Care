@@ -42,22 +42,20 @@
   }
 
 
-
-table{
+  table{
  
-    box-shadow:10px 10px 1px 1px black;
-    text-align:center;
+ box-shadow:3px 3px 1px 1px black;
+ text-align:center;
 }
 table:hover{
-    box-shadow:10px 10px 1px 1px blue;
+ box-shadow:3px 3px 1px 1px blue;
 }
-
 </style>
 
 
 </head>
 <body>
-  <div class="container-scroller" style="background-color:skyblue"> 
+  <div class="container-scroller"> 
     <!-- partial:partials/_navbar.html -->
    <?php
    include_once("header.php");
@@ -74,7 +72,7 @@ table:hover{
    
   </header>
   <div style="float:right;">
- <button class="btn btn-primary" style="width:150px;color:white;background-color:blue;border-top:1px solid white;border-right:1px solid white;border-bottom:1px solid white;border-left:1px solid white;border-radius:3px;text-decoration:none;margin-right:1px;border-radius:10px;"> <a style="text-decoration:none;color:white;" href="medicalnewsform.php" >Add New</a></button>
+<a style="text-decoration:none;color:white;" href="medicalnewsform.php" > <button class="btn btn-primary" style="width:150px;color:white;background-color:blue;border-top:1px solid white;border-right:1px solid white;border-bottom:1px solid white;border-left:1px solid white;border-radius:3px;text-decoration:none;margin-right:1px;border-radius:10px;"> Add New</button></a>
   </div>
   <div class="col-sm-12 col-md-12 col-lg-12">
    <table border="1px"   style="width:100%;" class="mt-5 text-white text-center">
@@ -184,7 +182,7 @@ if(mysqli_num_rows($Response)){
 include_once("footer.php");
 ?>
    <script>
-        var images = ["./images/care.jpg", "./images/dis.jpg", "./images/bacteria.jpg"]; // Array of image sources
+        var images = ["./images/medicalnews.jpg", "./images/medicalnewstwo.jpg", "./images/medicalthree.jpeg"]; // Array of image sources
         var imageIndex = 0; 
 
         // Function to change the image

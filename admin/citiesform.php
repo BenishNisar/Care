@@ -34,7 +34,7 @@ color:blue;
   <!-- inject:css -->
   <link rel="stylesheet" href="css/vertical-layout-light/style.css">
   <!-- endinject -->
-  <link rel="shortcut icon" href="images/favicon.png" />
+  <link rel="shortcut icon" href="images/favicon.png"/>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
 
@@ -53,11 +53,11 @@ color:blue;
 
 
 
-
-   
-      <div class="col-md-12 col-lg-12"style="margin-left:20px;" >
-<h2>Cities</h2>
-        <form action="#" method="POST" class="needs-validation" novalidate>
+<div class="container">
+   <div class="row">
+<div class="col-md-12 col-lg-12"style="margin-left:20px;" >
+<form action="#" method="POST" class="needs-validation" novalidate>
+        <h2>Cities</h2>
           <div class="row g-3">
           <div class="col-sm-12 col-md-12 col-lg-12">
               <label for="citiesname" class="form-label">Cities Name</label>
@@ -109,6 +109,10 @@ color:blue;
         </form>
       </div>
     </div>
+    </div>
+    <!-- row -->
+    </div>
+<!-- container -->
   </main>
 
 

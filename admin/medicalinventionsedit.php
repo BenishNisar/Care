@@ -84,11 +84,15 @@ $Data=mysqli_fetch_array($Result);
 
 
 
+   <div class="container">
+    <div class="row">
+
    
       <div class="col-md-6 col-lg-6"style="margin-left:20px;" >
-<h2>Medical Inventions Form</h2>
+
         <form action="#" method="POST" enctype="multipart/form-data" class="needs-validation" novalidate>
-          <div class="row g-3">
+        <h2>Medical Inventions Form</h2>
+        <div class="row g-3">
           <div class="col-sm-12 col-md-12 col-lg-12">
               <label for="email" class="form-label">Inventions Name</label>
               <input type="text" class="form-control" name="inventionsname" value="<?php echo $Data[1]; ?>" id="user" placeholder="Enter a headlines"  required>
@@ -166,6 +170,10 @@ $Data=mysqli_fetch_array($Result);
         </form>
       </div>
     </div>
+    </div>
+    <!-- row -->
+   </div>
+   <!-- container -->
   </main>
 
 

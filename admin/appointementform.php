@@ -1,3 +1,7 @@
+<?php
+$Connection=mysqli_connect("localhost","root","","care");
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -7,19 +11,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <title>Care Admin2 </title>
 
-  <style>
-      .fa-calendar-check{
-        height:20px;
-
-      }
-  .fa-calendar-check:hover{
-color:blue;
-
-
-}
-</style>
-  <!-- plugins:css -->
- 
   <link rel="stylesheet" href="vendors/feather/feather.css">
   <link rel="stylesheet" href="vendors/mdi/css/materialdesignicons.min.css">
   <link rel="stylesheet" href="vendors/ti-icons/css/themify-icons.css">
@@ -54,14 +45,13 @@ color:blue;
       <h2>Appointement form</h2>
 
     </div>
-
-   
-      <div class="col-md-6 col-lg-6" style="margin-left:20px;">
+    <div class="container">
+    <div class="row" style="margin-left:20px;">
         <h4 class="mb-3">Welcome</h4>
         <form action="#" method="POST" enctype="multipart/form-data" class="needs-validation" novalidate>
           <div class="row g-3">
           <div class="col-sm-6">
-              <label for="email" class="form-label">User</label>
+              <label for="email" class="form-label">Patient</label>
               <input type="email" class="form-control" name="user" id="user" placeholder="Enter a user Name"  required>
               <div class="invalid-feedback">
                 Valid first name is required.
@@ -90,8 +80,12 @@ color:blue;
 
 
             <div class="col-sm-6">
-              <label for="text" class="form-label">Department</label>
-              <input type="text" class="form-control" name="department" id="text" placeholder=" Enter Your Department"  required>
+              <label for="text" class="form-label">Departments</label>
+              <select name="department"class="form-control">
+                <option value="General medicine ward">General medicine ward</option>
+                <option value="ICU">ICU</option>
+              </select>
+              <!-- <input type="text" class="form-control" name="department" id="text" placeholder=" Enter Your Department"  required> -->
               <div class="invalid-feedback">
                 Valid first name is required.
               </div>
@@ -102,15 +96,51 @@ color:blue;
 
 
             <div class="col-sm-6">
-              <label for="doctor" class="form-label">Doctor</label>
-              <input type="text" class="form-control" name="doctor" id="text" placeholder="Enter a Doctor"  required>
+              <label for="doctor" class="form-label">Doctors</label>
+              <select name="doctor" class="form-control">
+                <?php
+                  $query="SELECT * FROM `doctoraccount`";
+                  $reuslt=mysqli_query($Connection,$query);
+                  if(mysqli_num_rows($reuslt)){
+                    while($row=mysqli_fetch_array($reuslt))
+                    {
+                   
+                ?>
+                <option value="<?php echo $row[1];?>"><?php echo $row[1];?></option>
+                <?php 
+                  }
+                }
+                ?>
+
+              </select>
+
+              <!-- <input type="text" class="form-control" name="doctor" id="text" placeholder="Enter a Doctor"  required> -->
               <div class="invalid-feedback">
                 Valid first name is required.
               </div>
             </div>
             <div class="col-sm-6">
               <label for="text" class="form-label">City</label>
-              <input type="text" class="form-control" name="city" id="text" placeholder="Enter a city"  required>
+
+<select name="city"class="form-control" id="">
+<?php
+                  $query="SELECT * FROM `cities`";
+                  $reuslt=mysqli_query($Connection,$query);
+                  if(mysqli_num_rows($reuslt)){
+                    while($row=mysqli_fetch_array($reuslt))
+                    {
+                   
+                ?>
+                <option value="<?php echo $row[1];?>"><?php echo $row[1];?></option>
+                <?php 
+                  }
+                }
+                ?>
+
+
+</select>
+
+              <!-- <input type="text" class="form-control" name="city" id="text" placeholder="Enter a city"  required> -->
               <div class="invalid-feedback">
                 Valid first name is required.
               </div>
@@ -135,18 +165,18 @@ color:blue;
 
   
   
-            <div class="col-sm-12">
-<div class="form-group mt-2">
-<label class="text-dark" for="">Message</label>
-<textarea name="message"  class="form-control" rows="5"></textarea>
+            <div class="col-sm-6">
+
+<label for="text" class="form-label form-group">Message</label>
+<textarea  name="message"  class="form-control" rows="10"></textarea>
     
+  
     </div>
-    </div>
 
 
 
 
-<div class="col-sm-12">
+<div class="col-sm-6">
               <label for="text" class="form-label">Time</label>
               <input type="time" class="form-control" name="time" id="text" placeholder="Enter a time"  required>
               <div class="invalid-feedback">
@@ -164,10 +194,16 @@ color:blue;
 
           
 
-          <button class=" btn btn-primary  float-right col-sm-4" name="submit" type="submit">Submit</button>
+          <button class="btn btn-primary float-right col-sm-2" name="submit" type="submit">Book Appointement</button>
         </form>
       </div>
     </div>
+
+</div>
+<!-- row -->
+    </div>
+    <!-- container -->
+
   </main>
 
 
@@ -189,7 +225,6 @@ color:blue;
 
 
 
-  
 </div>
 <!-- footer -->
 
@@ -229,7 +264,6 @@ include_once("footer.php");
 
 <?php
 if(isset($_POST["submit"])){
-    $Connection=mysqli_connect("localhost","root","","care");
     $User=$_POST["user"];
     $Email=$_POST["email"];
     $Phone=$_POST["phone"];

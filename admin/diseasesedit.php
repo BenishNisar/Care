@@ -65,15 +65,16 @@ $Data=mysqli_fetch_array($Result);
 <main>
  
 
+<div class="container">
 
-
-
+<div class="row">
    
       <div class="col-md-6 col-lg-6"style="margin-left:20px;" >
-<h2>Diseases</h2>
+
         <form action="#" method="POST" enctype="multipart/form-data" class="needs-validation" novalidate>
-          <div class="row g-3">
-          <div class="col-sm-6 col-md-6 col-lg-6">
+        <h2>Diseases</h2>
+        <div class="row g-3">
+          <div class="col-sm-6 col-md-12">
               <label for="email" class="form-label">Diseases Name</label>
               <input type="email" class="form-control" name="diseasesname" value="<?php echo $Data[1]; ?>" id="user" placeholder="Enter a Disease Name"  required>
               <div class="invalid-feedback">
@@ -83,7 +84,7 @@ $Data=mysqli_fetch_array($Result);
  
 
 
-            <div class="col-sm-12 col-md-12 col-lg-12">
+            <div class="col-sm-6 col-md-12">
 <div class="form-group">
 <label class="text-dark" for="">Descripation</label>
 <textarea name="descripation" value="<?php echo $Data[2]; ?>" style="height:250px" class="form-control" rows="5"></textarea>
@@ -93,7 +94,7 @@ $Data=mysqli_fetch_array($Result);
 
             <!-- button -->
 
-            <div class="col-sm-12 col-md-12">
+            <div class="col-sm-6 col-md-12">
               <label for="phone" class="form-label">Preventation</label>
               <input type="phone" class="form-control"  name="preventation" value="<?php echo $Data[3]; ?>" id="phone" placeholder="Preventation"  required>
               <div class="invalid-feedback">
@@ -104,7 +105,7 @@ $Data=mysqli_fetch_array($Result);
             
 
 
-            <div class="col-sm-12">
+            <div class="col-sm-6 col-md-12">
               <label for="text" class="form-label">Cure</label>
               <input type="text" class="form-control" name="cure" value="<?php echo $Data[4]; ?>" id="text" placeholder="Cure"  required>
               <div class="invalid-feedback">
@@ -112,7 +113,7 @@ $Data=mysqli_fetch_array($Result);
               </div>
             </div>
 
-            <div class="col-md-12 mt-5">
+            <div class="col-sm-6 col-md-12 mt-5">
         <label for="" class="form-label">Image</label>
 <input type="file" name="image" value="<?php echo $Data[5]; ?>"  id="">
               <div class="invalid-feedback">
@@ -150,6 +151,10 @@ $Data=mysqli_fetch_array($Result);
         </form>
       </div>
     </div>
+</div>
+<!-- row -->
+    </div>
+    <!-- container -->
   </main>
 
 

@@ -28,29 +28,17 @@
   <link rel="shortcut icon" href="images/favicon.png" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+  
+  
+
   <style>
-        body {
-            background-color: #f8f9fa;
-        }
-
-        .custom-form {
-            max-width: 500px;
-            margin: auto;
-            margin-top: 50px;
-            background-color: #ffffff;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-
-        .custom-form label {
-            font-weight: bold;
-        }
-
-        .custom-form button {
-            margin-top: 20px;
-        }
-    </style>
+      #password-eye {
+      cursor: pointer;
+      user-select: none;
+      height:33px;
+  
+    }
+  </style>
 
 </head>
 <body>
@@ -78,11 +66,11 @@
       <div class="col-md-6 col-lg-6"style="margin-left:20px;" >
 
         <form action="#" method="POST" enctype="multipart/form-data" class="needs-validation" novalidate>
-        <h2>Medical Inventions Form</h2>
+        <h2>Users</h2>
         <div class="row g-3">
           <div class="col-sm-12 col-md-12 col-lg-12">
-              <label for="email" class="form-label">Inventions Name</label>
-              <input type="text" class="form-control" name="inventionsname" id="user" placeholder="Enter a headlines"  required>
+              <label for="email" class="form-label">UserName</label>
+              <input type="text" class="form-control" name="username" id="text" placeholder="Enter a First Name"  required>
               <div class="invalid-feedback">
                 Valid first name is required.
               </div>
@@ -92,17 +80,22 @@
 
 
             <!-- button -->
-            <div class="col-sm-12 col-md-12 col-lg-12">
-<div class="form-group">
-<label class="text-dark" for="content">Descripation</label>
-<textarea name="descripation" style="height:250px" class="form-control" rows="5"></textarea>
-    
+            <div class="col-sm-12 col-md-12">
+    <div class="form-group">
+    <label for="password" class="form-label">Password</label>
+        <div class="input-group">
+            <input type="password" class="form-control"  name="password"  id="password" placeholder="Enter a Password" required>
+            <div class="input-group-append">
+                <span class="input-group-text" id="password-eye">👁️</span>
+            </div>
+        </div>
     </div>
-    </div>
+</div>
+
 
             <div class="col-sm-12 col-md-12">
-              <label for="" class="form-label">Inventor</label>
-              <input type="text" class="form-control"  name="inventor" id="inventor" placeholder="Enter a Text"  required>
+              <label for="email" class="form-label"> Email</label>
+              <input type="email" class="form-control"  name="email"   required>
               <div class="invalid-feedback">
                 Valid first name is required.
               </div>
@@ -113,18 +106,13 @@
 
           
 
-            <div class="col-md-12 mt-5">
-        <label for="" class="form-label">Image</label>
-<input type="file" name="image" id="">
-              <div class="invalid-feedback">
-                Please enter your shipping address.
-              </div>
-            </div>
+          
+            
           
 
             <div class="col-sm-12">
-              <label for="text" class="form-label">Inventions Date</label>
-              <input type="date" class="form-control" name="inventionsdate" id="source" placeholder="Enter a Text"  required>
+              <label for="text" class="form-label">Phone Number</label>
+              <input type="text" class="form-control" name="phonenumber" id="text" placeholder="Enter a PhoneNumber"  required>
               <div class="invalid-feedback">
                 Valid first name is required.
               </div>
@@ -132,6 +120,28 @@
 
           
 
+          
+
+            
+
+            
+          
+
+            <div class="col-sm-12">
+              <label for="text" class="form-label">Address</label>
+              <input type="text" class="form-control" name="address" id="text" placeholder="Enter a Address"  required>
+              <div class="invalid-feedback">
+                Valid first name is required.
+              </div>
+            </div>
+
+            
+          
+
+       
+          
+          
+          
            
 
   
@@ -157,13 +167,12 @@
         </form>
       </div>
     </div>
-
-      </div>
-<!-- row -->
+  
+  </div>
+  <!-- container -->
 </div>
-<!-- container -->
-
-  </main>
+  <!-- row -->
+</main>
 
 
 
@@ -189,6 +198,8 @@ include_once("footer.php");
 
   
 
+
+
   <!-- plugins:js -->
   <script src="vendors/js/vendor.bundle.base.js"></script>
   <!-- endinject -->
@@ -213,6 +224,23 @@ include_once("footer.php");
 </body>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 
+<script>
+    const passwordInput = document.getElementById('password');
+    const passwordEye = document.getElementById('password-eye');
+
+    passwordEye.addEventListener('click', togglePasswordVisibility);
+
+    function togglePasswordVisibility() {
+      if (passwordInput.type === 'password') {
+        passwordInput.type = 'text';
+        passwordEye.textContent = '👁️';
+      } else {
+        passwordInput.type = 'password';
+        passwordEye.textContent = '👁️';
+      }
+    }
+  </script>
+
 </html>
 
 
@@ -220,22 +248,20 @@ include_once("footer.php");
 <?php
 if(isset($_POST["submit"])){
     include("connection.php");
-    $InventionsName=$_POST["inventionsname"];
-    $Descripation=$_POST["descripation"];
-    $Inventor=$_POST["inventor"];
-    $Image=$_POST["image"];
-    $Image=$_FILES['image']['name'];
-    $tmp_name=$_FILES['image']['tmp_name'];
-    $Path="./images/".$Image;
-    move_uploaded_file($tmp_name,$Path);
-$Inventionsdate=$_POST["inventionsdate"];
+    $UserName=$_POST["username"];
+    $Password=$_POST["password"];
+    $Email=$_POST["email"];
+    $PhoneNumber=$_POST["phonenumber"];
+    $Address=$_POST["address"];
+    
   
-   $Query="INSERT INTO `medical_inventions`(`id`, `inventionsname`, `descripation`, `inventor`, `inventationsdate`, `image`) VALUES (NULL,'$InventionsName','$Descripation','$Inventor','$Inventionsdate','$Image')";
+   $Query="INSERT INTO `users`(`id`, `username`, `password`, `email`, `phonenumber`, `address`) VALUES (
+    NULL,'$UserName','$Password','$Email','$PhoneNumber','$Address')";
 
 
 mysqli_query($Db,$Query);
 
-echo "<script>window.location.href='medicalinventionsfetch.php';</script>";
+echo "<script>window.location.href='usersfetch.php';</script>";
 
 
 }

@@ -72,10 +72,10 @@
 
 
 
-
-   
+<div class="container">
+   <div class="row">
       <div class="col-md-6 col-lg-6"style="margin-left:20px;" >
-<h2>Diseases</h2>
+<h2>Medical News</h2>
         <form action="#" method="POST" enctype="multipart/form-data" class="needs-validation" novalidate>
           <div class="row g-3">
           <div class="col-sm-12 col-md-12 col-lg-12">
@@ -155,6 +155,10 @@
         </form>
       </div>
     </div>
+</div>
+ <!-- row -->
+</div>
+    <!-- container -->
   </main>
 
 

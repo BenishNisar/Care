@@ -1,3 +1,11 @@
+<?php
+session_start();
+error_reporting(0);
+if($_SESSION["username"]!= "" ){
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -6,19 +14,8 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <title>Care Admin2 </title>
+  
 
-  <style>
-      .fa-calendar-check{
-        height:20px;
-
-      }
-  .fa-calendar-check:hover{
-color:blue;
-
-
-}
-
-</style>
   <!-- plugins:css -->
   <link rel="stylesheet" href="vendors/feather/feather.css">
   <link rel="stylesheet" href="vendors/mdi/css/materialdesignicons.min.css">
@@ -36,6 +33,9 @@ color:blue;
   <!-- endinject -->
   <link rel="shortcut icon" href="images/favicon.png" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+
+
 
 
 </head>
@@ -47,6 +47,186 @@ color:blue;
    ?>
   
   <!-- container-scroller -->
+
+
+
+<div class="container">
+<h1>Welcome to Dashboard
+  <?php
+  
+  echo $_SESSION["username"];
+  
+  
+  ?>
+</h1>
+<div class="row">
+<div class="col-md-4">
+
+<div class="card mt-5 bg-primary" style="width: 12rem;height:150px;border:double black;box-shadow:10px 10px 10px gray;card:hover;background:pink;">
+<a href="appointementfetch.php" style="text-decoration:none;">
+  <div class="card-body">
+   
+    <h2 class="card-title text-dark">Appointment</h2>
+    <?php
+      include_once('connection.php');
+      $query="SELECT * FROM `appointement`";
+      $result=mysqli_query($Db,$query);
+      $rowcount=mysqli_num_rows($result);
+    ?>
+    
+    <h5 style="border: 1px solid black; width: 55px; height: 55px; align-items: center; text-align: center; border-radius: 50%; padding: 11px; background: white; margin-top: 10px;" class="text-dark"><?php echo $rowcount;?></h5>
+    
+  </div>
+
+</a>
+</div>
+<!-- cardbody -->
+</div>
+<!-- col -->
+
+
+<!-- col two -->
+
+
+<div class="col-md-4">
+<div class="card mt-5 bg-primary" style="width: 12rem;height:150px;color:black;border:double black;box-shadow:10px 10px 10px gray;">
+<a href="doctoraccountfetch.php" style="text-decoration:none;">
+  <div class="card-body">
+   
+    <h2 class="card-title text-dark">
+   
+      Doctors
+   
+    </h2>
+    <?php
+      include_once('connection.php');
+      $query="SELECT * FROM `doctoraccount`";
+      $result=mysqli_query($Db,$query);
+      $rowcount=mysqli_num_rows($result);
+    ?>
+    
+    <h5 style="border: 1px solid black; width: 55px; height: 55px; align-items: center; text-align: center; border-radius: 50%; padding: 11px; background: white; margin-top: 10px;" class="text-dark"><?php echo $rowcount;?></h5>
+    
+  </div>
+
+</a>
+</div>
+<!-- cardbody -->
+</div>
+<!-- col -->
+
+
+<div class="col-md-4">
+<div class="card mt-5 bg-primary" style="width: 12rem;height:150px;color:black;border:double black;box-shadow:10px 10px 10px gray;">
+<a href="diseasesfetch.php" style="text-decoration:none;">
+  <div class="card-body">
+   
+    <h2 class="card-title text-dark">
+   
+      Diseases
+   
+    </h2>
+    <?php
+      include_once('connection.php');
+      $query="SELECT * FROM `diseases`";
+      $result=mysqli_query($Db,$query);
+      $rowcount=mysqli_num_rows($result);
+    ?>
+    
+    <h5 style="border: 1px solid black; width: 55px; height: 55px; align-items: center; text-align: center; border-radius: 50%; padding: 11px; background: white; margin-top: 10px;" class="text-dark"><?php echo $rowcount;?></h5>
+    
+  </div>
+
+</a>
+</div>
+<!-- cardbody -->
+</div>
+<!-- col -->
+
+
+<div class="col-md-4">
+<div class="card mt-5 bg-primary" style="width: 12rem;height:150px;color:black;border:double black;box-shadow:10px 10px 10px gray;">
+<a href="availabilityfetch.php" style="text-decoration:none;">
+  <div class="card-body">
+   
+    <h2 class="card-title text-dark">
+   
+      Availability
+   
+    </h2>
+    <?php
+      include_once('connection.php');
+      $query="SELECT * FROM `availability`";
+      $result=mysqli_query($Db,$query);
+      $rowcount=mysqli_num_rows($result);
+    ?>
+    
+    <h5 style="border: 1px solid black; width: 55px; height: 55px; align-items: center; text-align: center; border-radius: 50%; padding: 11px; background: white; margin-top: 10px;" class="text-dark"><?php echo $rowcount;?></h5>
+    
+  </div>
+
+</a>
+</div>
+<!-- cardbody -->
+</div>
+<!-- col -->
+
+
+
+<div class="col-md-4">
+<div class="card mt-5 bg-primary"  style="width: 12rem;height:150px;color:black;border:double black;box-shadow:10px 10px 10px gray;">
+<a href="usersfetch.php" style="text-decoration:none;">
+  <div class="card-body">
+   
+    <h2 class="card-title text-dark">
+   
+      Users
+   
+    </h2>
+    <?php
+      include_once('connection.php');
+      $query="SELECT * FROM `users`";
+      $result=mysqli_query($Db,$query);
+      $rowcount=mysqli_num_rows($result);
+    ?>
+    
+    <h5 style="border: 1px solid black; width: 55px; height: 55px; align-items: center; text-align: center; border-radius: 50%; padding: 11px; background: white; margin-top: 10px;" class="text-dark"><?php echo $rowcount;?></h5>
+    
+  </div>
+
+</a>
+</div>
+<!-- cardbody -->
+</div>
+<!-- col -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+<!-- container -->
+
+</div>
+<!-- row -->
+
+
+
+
+
+
+
   
 </div>
 
@@ -84,5 +264,14 @@ include_once("footer.php");
   <!-- End custom js for this page-->
 </body>
 
-</html>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 
+</html>
+<?php
+}
+
+else{
+  echo "<script>window.location.href='../login.php';</script>";
+}
+
+?>

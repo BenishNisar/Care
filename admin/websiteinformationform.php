@@ -71,18 +71,18 @@
  
 
 
+<div class="container">
+<div class="row">
 
 
-   <div class="container">
-   <div class="row">
-      <div class="col-md-6 col-lg-6"style="margin-left:20px;" >
+      <div class="col-md-12 col-lg-12"style="margin-left:20px;" >
 
-        <form action="#" method="POST" enctype="multipart/form-data" class="needs-validation" novalidate>
-        <h2>Medical Inventions Form</h2>
-        <div class="row g-3">
+        <form action="#" method="POST"  class="needs-validation" novalidate>
+        <h2>Website Information</h2>
+          <div class="row g-3">
           <div class="col-sm-12 col-md-12 col-lg-12">
-              <label for="email" class="form-label">Inventions Name</label>
-              <input type="text" class="form-control" name="inventionsname" id="user" placeholder="Enter a headlines"  required>
+              <label for="email" class="form-label">Website Contact Number</label>
+              <input type="text" class="form-control" name="websitecontactnumber" id="user" placeholder="Enter a Contact Number"  required>
               <div class="invalid-feedback">
                 Valid first name is required.
               </div>
@@ -92,43 +92,23 @@
 
 
             <!-- button -->
-            <div class="col-sm-12 col-md-12 col-lg-12">
-<div class="form-group">
-<label class="text-dark" for="content">Descripation</label>
-<textarea name="descripation" style="height:250px" class="form-control" rows="5"></textarea>
-    
-    </div>
-    </div>
 
-            <div class="col-sm-12 col-md-12">
-              <label for="" class="form-label">Inventor</label>
-              <input type="text" class="form-control"  name="inventor" id="inventor" placeholder="Enter a Text"  required>
+
+            <div class="col-sm-12 col-md-12 col-lg-12">
+              <label for="email" class="form-label">Email</label>
+              <input type="email" class="form-control" name="email" id="user" placeholder="Enter a Email"  required>
               <div class="invalid-feedback">
                 Valid first name is required.
               </div>
             </div>
+ 
 
             
 
 
           
 
-            <div class="col-md-12 mt-5">
-        <label for="" class="form-label">Image</label>
-<input type="file" name="image" id="">
-              <div class="invalid-feedback">
-                Please enter your shipping address.
-              </div>
-            </div>
-          
 
-            <div class="col-sm-12">
-              <label for="text" class="form-label">Inventions Date</label>
-              <input type="date" class="form-control" name="inventionsdate" id="source" placeholder="Enter a Text"  required>
-              <div class="invalid-feedback">
-                Valid first name is required.
-              </div>
-            </div>
 
           
 
@@ -153,16 +133,13 @@
 
           
 
-          <button class=" btn btn-primary text-light  float-right col-sm-4" style="margin-bottom:10px;" name="submit" type="submit">Submit</button>
+          <button class=" btn btn-primary text-light  float-right col-sm-2" name="submit" type="submit">Submit</button>
         </form>
       </div>
     </div>
 
-      </div>
-<!-- row -->
 </div>
-<!-- container -->
-
+</div>
   </main>
 
 
@@ -220,22 +197,18 @@ include_once("footer.php");
 <?php
 if(isset($_POST["submit"])){
     include("connection.php");
-    $InventionsName=$_POST["inventionsname"];
-    $Descripation=$_POST["descripation"];
-    $Inventor=$_POST["inventor"];
-    $Image=$_POST["image"];
-    $Image=$_FILES['image']['name'];
-    $tmp_name=$_FILES['image']['tmp_name'];
-    $Path="./images/".$Image;
-    move_uploaded_file($tmp_name,$Path);
-$Inventionsdate=$_POST["inventionsdate"];
+    $WebsiteContactNumber=$_POST["websitecontactnumber"];
+    $Email=$_POST["email"];
   
-   $Query="INSERT INTO `medical_inventions`(`id`, `inventionsname`, `descripation`, `inventor`, `inventationsdate`, `image`) VALUES (NULL,'$InventionsName','$Descripation','$Inventor','$Inventionsdate','$Image')";
+
+  
+  
+   $Query="INSERT INTO `websiteinformation`(`id`, `websitecontactnumber`, `email`) VALUES (NULL,'$WebsiteContactNumber','$Email')";
 
 
 mysqli_query($Db,$Query);
 
-echo "<script>window.location.href='medicalinventionsfetch.php';</script>";
+echo "<script>window.location.href='websiteinformationfetch.php';</script>";
 
 
 }

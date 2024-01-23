@@ -67,13 +67,12 @@ $Data=mysqli_fetch_array($Result);
 <main>
  
 
+<div class="container">
+<div class="row"> 
+<div class="col-md-12 col-lg-12 mt-2"style="margin-left:20px;" >
 
-
-
-   
-      <div class="col-md-12 col-lg-12 mt-2"style="margin-left:20px;" >
-<h2>Cities</h2>
         <form action="#" method="POST" class="needs-validation" novalidate>
+        <h2>Cities</h2>
           <div class="row g-3">
           <div class="col-sm-12 col-md-12 col-lg-12 mt-5">
               <label for="citiesname" class="form-label">Cities Name</label>
@@ -125,6 +124,11 @@ $Data=mysqli_fetch_array($Result);
         </form>
       </div>
     </div>
+
+</div>
+<!-- row -->
+</div>
+<!-- container   -->
   </main>
 
 

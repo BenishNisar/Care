@@ -1,3 +1,9 @@
+<?php
+session_start();
+error_reporting(0);
+if($_SESSION["username"] == ""){
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -114,45 +120,6 @@ body {
 }
 </style>
 <body class="container display-4">
-<?php
-
-session_start();
-include("connection.php");
-include ('..translate.php');
-
-if(isset($_POST['submit'])){
-
-$admin_email=$_POST['email'];
-$admin_pswd=$_POST['admin_pswd'];
-
-if(empty($admin_email) || empty ($admin_pswd))
-{
-//$error_msg="filled all the requirements";
-}
-
-else
-
-{
- $admin_query = "SELECT `id`, `username`, `email`, `password` FROM `login` WHERE `email` ='$admin_email' AND `password`='$admin_pswd'";
-
-	$check=mysqli_query($db,$admin_query);
-	
-	if(mysqli_num_rows($check)>0)
-	/*if($_POST['id']=='$id' && $_POST['pswd']=='$pswd')*/
-	
-	{
-	$check_row= mysqli_fetch_assoc($check);
-
-	echo "<script> window.location.href='index.php' </script> ";
-	}
-	else
-	{
-	$invalid_msg="Invalid user id / password ";
-	}
-
-}
-}
-?>
 
 
   <!-- Login -->
@@ -163,7 +130,7 @@ else
         <div class="text-center mt-4 name">
             Care
         </div>
-        <form class="p-3 mt-3" action="index.php" method="POST">
+        <form class="p-3 mt-3" action="#" method="POST">
     <!-- Your form fields go here -->
     <div class="form-field d-flex align-items-center">
         <span class="far fa-user"></span>
@@ -171,7 +138,7 @@ else
     </div>
     <div class="form-field d-flex align-items-center">
         <span class="fas fa-key"></span>
-        <input type="password" name="admin_pswd" id="pwd" placeholder="Password">
+        <input type="password" name="password" id="pwd" placeholder="Password">
     </div>
     <button class="btn mt-3" name="submit" type="submit">Login</button>
 </form>
@@ -180,12 +147,39 @@ else
             <a href="#">Forget password?</a> or <a href="#">Sign up</a>
         </div>
     </div>
- <?php
-if(isset($error_msg)){echo $error_msg;}
-if(isset($invalid_msg)){echo $invalid_msg;}
-?>
+
 
 
 
 </body>
 </html>
+
+<?php
+if(isset($_POST["submit"])){
+include("connection.php");
+$Email=$_POST["email"];
+$Password=$_POST["password"];
+$Query="SELECT `id`, `username`, `password`, `email`, `phonenumber`, `address` FROM `users` WHERE `email`='$Email' AND `password`='$Password'";
+$Response=mysqli_query($Db,$Query);
+
+if(mysqli_num_rows($Response)){
+    $Data=mysqli_fetch_array($Response);
+    session_start();
+    $_SESSION["username"]=$Data[1];
+    echo "<script>window.location.href='../index.php';</script>";
+
+
+
+}
+
+else{
+    echo "Invalid email or password";
+}
+
+}
+
+}
+else{
+    echo "<script>window.location.href='../index.php';</script>";
+}
+?>

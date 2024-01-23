@@ -1,8 +1,3 @@
-<?php
-$Id=$_GET["id"];
-
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -12,7 +7,17 @@ $Id=$_GET["id"];
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <title>Care Admin2 </title>
 
+  <style>
+      .fa-calendar-check{
+        height:20px;
 
+      }
+  .fa-calendar-check:hover{
+color:blue;
+
+
+}
+</style>
   <!-- plugins:css -->
 
   <link rel="stylesheet" href="vendors/feather/feather.css">
@@ -41,119 +46,115 @@ $Id=$_GET["id"];
    include_once("header.php");
    ?>
 
-<?php
 
-include("connection.php");
-$Query="SELECT * FROM `appointement` WHERE `id`='$Id'";
-$Result=mysqli_query($Db,$Query);
-$Data=mysqli_fetch_array($Result);
-
-
-?>
 
 <main>
  
 
+
+
+
    <div class="container">
     <div class="row">
-
-      <div class="col-md-6 col-lg-6" style="margin-left:20px;">
-        <h4 class="mb-3">Welcome</h4>
+      <div class="col-md-12 col-lg-12"style="margin-left:20px;" >
+<h2>Doctor Account</h2>
         <form action="#" method="POST" enctype="multipart/form-data" class="needs-validation" novalidate>
           <div class="row g-3">
-          <div class="col-sm-6">
-              <label for="email" class="form-label">User</label>
-              <input type="email" class="form-control" name="user" value="<?php echo $Data[1]; ?>" id="user" placeholder="Enter a user Name"  required>
+          <div class="col-sm-6 col-md-6 col-lg-6">
+              <label for="text" class="form-label">Doctor Name</label>
+              <input type="text" class="form-control" name="doctor" id="user" placeholder="Enter a Doctor Name"  required>
               <div class="invalid-feedback">
                 Valid first name is required.
               </div>
             </div>
-            <div class="col-sm-6">
-              <label for="email" class="form-label">Email</label>
-              <input type="email" class="form-control" name="email" value="<?php echo $Data[2]; ?>" id="email" placeholder="Enter Your Email"  required>
+ 
+            <div class="col-sm-6 col-md-6 col-lg-6">
+              <label for="text" class="form-label">Doctor Profile</label>
+              <input type="file" class="form-control" name="doctorprofile" id="user" placeholder="Enter a Disease Name"  required>
+              <div class="invalid-feedback">
+                Valid first name is required.
+              </div>
+            </div>
+            <div class="col-sm-6 col-md-6 col-lg-6">
+              <label for="text" class="form-label">First Name</label>
+              <input type="text" class="form-control" name="firstname" id="user" placeholder="Enter a First Name"  required>
               <div class="invalid-feedback">
                 Valid first name is required.
               </div>
             </div>
 
-
-            <!-- button -->
-
-            <div class="col-sm-6">
-              <label for="phone" class="form-label">Phone</label>
-              <input type="phone" class="form-control" name="phone" value="<?php echo $Data[3]; ?>"  id="phone" placeholder="Enter Your PhoneNumber"  required>
+            <div class="col-sm-6 col-md-6 col-lg-6">
+              <label for="text" class="form-label">Last Name</label>
+              <input type="text" class="form-control" name="lastname" id="user" placeholder="Enter a Last Name"  required>
               <div class="invalid-feedback">
                 Valid first name is required.
               </div>
             </div>
+
+        
+
+         
 
             
 
 
-            <div class="col-sm-6">
-              <label for="text" class="form-label">Department</label>
-              <input type="text" class="form-control" name="department" value="<?php echo $Data[4]; ?>" id="text"  placeholder=" Enter Your Department"  required>
+            <div class="col-sm-6 col-md-6">
+              <label for="text" class="form-label">Specialty<label>
+              <input type="text" class="form-control" name="specialty" id="text" placeholder="Enter a Text"  required>
               <div class="invalid-feedback">
                 Valid first name is required.
               </div>
             </div>
 
+            <div class="col-md-6">
+        <label for="" class="form-label">Image</label>
+<input type="file" name="image" id="">
+              <div class="invalid-feedback">
+                Please enter your shipping address.
+              </div>
+            </div>
           
 
 
 
-            <div class="col-sm-6">
-              <label for="doctor" class="form-label">Doctor</label>
-              <input type="text" class="form-control" name="doctor" value="<?php echo $Data[5]; ?>" id="text"  placeholder="Enter a Doctor"  required>
+          
+            <div class="col-sm-6 col-md-6 col-lg-6">
+              <label for="email" class="form-label">Email</label>
+              <input type="email" class="form-control" name="email" id="user" placeholder="Enter Your Email"  required>
               <div class="invalid-feedback">
                 Valid first name is required.
               </div>
             </div>
-            <div class="col-sm-6">
-              <label for="text" class="form-label">City</label>
-              <input type="text" class="form-control" name="city" value="<?php echo $Data[6]; ?>" id="text" placeholder="Enter a city"  required>
-              <div class="invalid-feedback">
-                Valid first name is required.
-              </div>
-            </div>
-
-            <div class="col-sm-6">
-              <label for="text" class="form-label">Hospital</label>
-              <input type="text" class="form-control" name="hospital" value="<?php echo $Data[7]; ?>" id="text" placeholder="Enter a hospital"  required>
-              <div class="invalid-feedback">
-                Valid first name is required.
-              </div>
-            </div>
-            <div class="col-sm-6">
-              <label for="text" class="form-label">Date</label>
-              <input type="date" class="form-control" name="date" id="text" value="<?php echo $Data[8]; ?>" placeholder="Date,month,year"  required>
-              <div class="invalid-feedback">
-                Valid first name is required.
-              </div>
-            </div>
-
            
-
-  
-  
-            <div class="col-sm-12">
-<div class="form-group mt-2">
-<label class="text-dark" for="">Message</label>
-<textarea name="message"  value="<?php echo $Data[9]; ?>"  class="form-control" rows="5"></textarea>
-    
-    </div>
-    </div>
-
-
-
-
-<div class="col-sm-12">
-              <label for="text" class="form-label">Time</label>
-              <input type="time" class="form-control" name="time"  value="<?php echo $Data[10]; ?>" id="text" placeholder="Enter a time"  required>
+            <div class="col-sm-6 col-md-6 col-lg-6">
+              <label for="text" class="form-label">Password</label>
+              <input type="password" class="form-control" name="password" id="user"   required>
               <div class="invalid-feedback">
                 Valid first name is required.
               </div>
             </div>
+  
+  
+
+            <div class="col-sm-6 col-md-6 col-lg-6">
+              <label for="text" class="form-label">Phone Number</label>
+              <input type="text" class="form-control" name="phonenumber" id="user" placeholder="Enter a Disease Name"  required>
+              <div class="invalid-feedback">
+                Valid first name is required.
+              </div>
+            </div>
+
+            <div class="col-sm-6 col-md-6 col-lg-6">
+              <label for="text" class="form-label">Address</label>
+              <textarea name="address" id="" class="form-control"  cols="30" rows="10"></textarea>
+
+              <!-- <input type="text" class="form-control" name="address" id="user" placeholder="Enter a Disease Name"  required> -->
+              <div class="invalid-feedback">
+                Valid first name is required.
+              </div>
+            </div>
+
+
   
 
           <hr class="my-4">
@@ -165,15 +166,20 @@ $Data=mysqli_fetch_array($Result);
 
           
 
-          <button class=" btn btn-primary  float-right col-sm-4" name="submit" type="submit">Submit</button>
+          <button class=" btn btn-primary text-light  float-right col-sm-2" name="submit" type="submit">Submit</button>
         </form>
       </div>
     </div>
-    </div>
+
+</div>
 <!-- row -->
-  </div>
-  <!-- container -->
-  </main>
+</div>
+<!-- container -->
+</main>
+
+
+  
+
 
 
 
@@ -232,31 +238,33 @@ include_once("footer.php");
 
 
 <?php
-if(isset($_POST["submit"])){
+if (isset($_POST["submit"])) {
     include("connection.php");
-    $User=$_POST["user"];
-    $Email=$_POST["email"];
-    $Phone=$_POST["phone"];
-    $Department=$_POST["department"];
-    $Doctor=$_POST["doctor"];
-    $City=$_POST["city"];
-    $Hospital=$_POST["hospital"];
-    $Date=$_POST["date"];
-    $Message=$_POST["message"];
-    $Time=$_POST["time"];
+    $DoctorName = $_POST["doctor"];
+    $DoctorProfile = $_FILES["doctorprofile"]["name"];
+    $TmpDoctorProfile = $_FILES["doctorprofile"]["tmp_name"];
+    $PathDoctorProfile = "./images/" . $DoctorProfile;
+    move_uploaded_file($TmpDoctorProfile, $PathDoctorProfile);
 
-  
-  
-    $Update="UPDATE `appointement` SET `user`='$User',`email`='$Email',`phone`='$Phone',`department`='$Department',`doctor`='$Doctor',`city`='$City',`hospital`='$Hospital',`date`='$Date',`message`='$Message',`time`='$Time' WHERE `id`='$Id'";
+    $FirstName = $_POST["firstname"];
+    $LastName = $_POST["lastname"];
+    $Specialty = $_POST["specialty"];
 
+    $Image = $_FILES['image']['name'];
+    $TmpImage = $_FILES['image']['tmp_name'];
+    $PathImage = "./images/" . $Image;
+    move_uploaded_file($TmpImage, $PathImage);
 
+    $Email = $_POST['email'];
+    $Password = $_POST['password'];
+    $PhoneNumber = $_POST['phonenumber'];
+    $Address = $_POST["address"];
 
-mysqli_query($Db,$Update);
+    $Query = "INSERT INTO `doctoraccount`(`id`, `username`, `doctorprofile`, `firstname`, `lastname`, `specialty`, `image`, `email`, `password`, `phonenumber`, `address`) 
+              VALUES (NULL,'$DoctorName','$DoctorProfile','$FirstName','$LastName','$Specialty','$Image','$Email','$Password','$PhoneNumber','$Address')";
 
-echo "<script>window.location.href='appointementfetch.php';</script>";
+    mysqli_query($Db, $Query);
 
-
+    echo "<script>window.location.href='doctoraccountfetch.php';</script>";
 }
-
-
 ?>

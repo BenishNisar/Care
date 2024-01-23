@@ -8,7 +8,7 @@
         </div>
         <div>
           <a class="navbar-brand brand-logo" href="index.html">
-            <img src="images/logo.svg" alt="logo" />
+            <img src="images/logo.svg" alt="logo" width="250px">
           </a>
           <a class="navbar-brand brand-logo-mini" href="index.html">
             <img src="images/logo-mini.svg" alt="logo" />
@@ -161,7 +161,7 @@
               <a class="dropdown-item"><i class="dropdown-item-icon mdi mdi-message-text-outline text-primary me-2"></i> Messages</a>
               <a class="dropdown-item"><i class="dropdown-item-icon mdi mdi-calendar-check-outline text-primary me-2"></i> Activity</a>
               <a class="dropdown-item"><i class="dropdown-item-icon mdi mdi-help-circle-outline text-primary me-2"></i> FAQ</a>
-              <a class="dropdown-item"><i class="dropdown-item-icon mdi mdi-power text-primary me-2"></i>Sign Out</a>
+              <a class="dropdown-item" href="logout.php"><i class="dropdown-item-icon mdi mdi-power text-primary me-2"></i>Sign Out</a>
             </div>
           </li>
         </ul>
@@ -194,8 +194,10 @@
       
       <!-- partial -->
       <!-- partial:partials/_sidebar.html -->
-      <nav class="sidebar sidebar-offcanvas" id="sidebar">
+      <nav class="sidebar sidebar-offcanvas" id="sidebar" style="Width:270px;margin-left:-20px;">
         <ul class="nav">
+
+       
           <li class="nav-item">
             <a class="nav-link" href="index.php">
               <span class="menu-title">Dashboard</span>
@@ -235,73 +237,59 @@
               <span class="menu-title">Cities</span>
             </a>
           </li>
-       
-
           <li class="nav-item">
             <a class="nav-link" href="websiteinformationfetch.php">
             
-              <span class="menu-title">Website Information</span>
+              <span class="menu-title">Website Information </span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="availabilityfetch.php">
+            
+              <span class="menu-title">Availability</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="doctoraccountfetch.php">
+            
+              <span class="menu-title">Doctor Accounts</span>
             </a>
           </li>
 
+        
           <li class="nav-item">
-            <a class="nav-link" href="patientdetails.php">
-              <i class="mdi mdi-grid-large menu-icon"></i>
-              <span class="menu-title">patientsdetails</span>
+            <a class="nav-link" href="patientrecordfetch.php">
+            
+              <span class="menu-title">Patient Record</span>
             </a>
           </li>
+        
        
           <li class="nav-item">
-            <a class="nav-link" href="users.php">
-              <i class="mdi mdi-grid-large menu-icon"></i>
+            <a class="nav-link" href="usersfetch.php">
+             
               <span class="menu-title">Users</span>
             </a>
           </li>
+          <li class="nav-item">
+            <a class="nav-link" href="hospitalsfetch.php">
+             
+              <span class="menu-title">Hospitals</span>
+            </a>
+          </li>
           
        
 
 
           
-      <li class="nav-item">
-            <a class="nav-link" href="websiteinformation.php">
-            <i class="fa-solid fa-calendar-check" ></i>
-              <span class="menu-title" style="margin-left:20px;">Website Information</span>
-            </a>
-          </li>
+    
 
 
 
+         
+          
 
-          <li class="nav-item">
-            <a class="nav-link" href="doctoraccounts.php">
-            <i class="fa-solid fa-calendar-check" ></i>
-              <span class="menu-title" style="margin-left:20px;">Doctor Accounts</span>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="websiteinformation.php">
-            <i class="fa-solid fa-calendar-check" ></i>
-              <span class="menu-title" style="margin-left:20px;">Availability</span>
-            </a>
-          </li>
-  <li class="nav-item">
-            <a class="nav-link" href="websiteinformation.php">
-            <i class="fa-solid fa-calendar-check" ></i>
-              <span class="menu-title" style="margin-left:20px;">PatientAccounts</span>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="websiteinformation.php">
-            <i class="fa-solid fa-calendar-check" ></i>
-              <span class="menu-title" style="margin-left:20px;">PatientAccounts</span>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="patients.php">
-            <i class="fa-solid fa-calendar-check" ></i>
-              <span class="menu-title" style="margin-left:20px;">ConfirmedAppointements</span>
-            </a>
-          </li>
+        
 
 
           
