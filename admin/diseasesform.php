@@ -44,6 +44,7 @@ color:blue;
     <!-- partial:partials/_navbar.html -->
    <?php
    include_once("header.php");
+   include_once("headerscript.php");
    ?>
 
 
@@ -73,7 +74,7 @@ color:blue;
             <div class="col-sm-6 col-md-12 col-lg-12">
 <div class="form-group">
 <label class="text-dark" for="">Descripation</label>
-<textarea name="descripation" style="height:250px" class="form-control" rows="5"></textarea>
+<textarea class="form-control" id="description" name="descripation" rows="5"></textarea>
     
     </div>
     </div>
@@ -101,7 +102,8 @@ color:blue;
 
             <div class="col-sm-6 col-md-12 mt-5">
         <label for="" class="form-label">Image</label>
-<input type="file" name="image" id="">
+<input type="file"
+class="form-control" name="image" id="">
               <div class="invalid-feedback">
                 Please enter your shipping address.
               </div>
@@ -174,6 +176,9 @@ include_once("footer.php");
 ?>
 
   
+
+
+
 
   <!-- plugins:js -->
   <script src="vendors/js/vendor.bundle.base.js"></script>

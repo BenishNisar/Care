@@ -61,6 +61,7 @@ table:hover{
     <!-- partial:partials/_navbar.html -->
    <?php
    include_once("header.php");
+   include_once("headerscript.php")
    ?>
  
 
@@ -183,7 +184,7 @@ if(mysqli_num_rows($Response)){
 include_once("footer.php");
 ?>
    <script>
-        var images = ["./images/care.jpg", "./images/dis.jpg", "./images/bacteria.jpg"]; // Array of image sources
+        var images = ["./images/Chickenpox.jpg", "./images/dis.jpg", "./images/bacteria.jpg"]; // Array of image sources
         var imageIndex = 0; 
 
         // Function to change the image
@@ -202,6 +203,10 @@ include_once("footer.php");
 
         // Initially set the image
         changeImage();
+
+
+
+  
     </script>
 
 

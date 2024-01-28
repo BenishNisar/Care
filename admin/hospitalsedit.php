@@ -42,6 +42,7 @@ $Id=$_GET["id"];
     <!-- partial:partials/_navbar.html -->
    <?php
    include_once("header.php");
+   include_once("headerscript.php");
    ?>
 
 
@@ -81,8 +82,21 @@ $Data=mysqli_fetch_array($Result);
  
             <div class="col-sm-6 col-md-6 col-lg-6">
               <label for="text" class="form-label">Hospital city</label>
-              <select name="hospitalcity" value="<?php echo $Data[2];  ?>"   class="form-control" id="">
-
+              <select name="hospitalcity"   class="form-control" id="">
+              <?php
+                  $querycity="SELECT * FROM `cities`";
+                  $reusltcity=mysqli_query($Db,$querycity);
+                  if(mysqli_num_rows($reusltcity)){
+                    while($row=mysqli_fetch_array($reusltcity))
+                    {
+                   
+                ?>
+                <option value="<?php 
+                 echo $row[1] ;?>"><?php echo $row[1];?></option>
+                <?php 
+                  }
+                }
+                ?>
               
 
 
@@ -251,7 +265,7 @@ include_once("footer.php");
 if (isset($_POST["submit"])) {
 
     $HospitalName = $_POST["hospitalname"];
-    $HospitalCity = $_FILES["hospitalcity"];
+    $HospitalCity = $_POST["hospitalcity"];
     $Area = $_POST["area"];
     $Location = $_POST["location"];
     $ZipCode = $_POST["zipcode"];

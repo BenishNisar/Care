@@ -61,6 +61,7 @@ table:hover{
     <!-- partial:partials/_navbar.html -->
    <?php
    include_once("header.php");
+   include_once("headerscript.php");
    ?>
  
 
@@ -204,6 +205,8 @@ include_once("footer.php");
 
         // Initially set the image
         changeImage();
+
+
     </script>
 
 

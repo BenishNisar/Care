@@ -62,6 +62,7 @@ $Id=$_GET['id'];
     <!-- partial:partials/_navbar.html -->
    <?php
    include_once("header.php");
+   include_once("headerscript.php");
    ?>
 <?php
 
@@ -197,6 +198,10 @@ $Data=mysqli_fetch_array($Result);
 <?php
 include_once("footer.php");
 ?>
+
+
+
+
 
   
 

@@ -125,7 +125,7 @@ body {
   <!-- Login -->
   <div class="wrapper">
         <div class="logo">
-            <img src="https://www.freepnglogos.com/uploads/twitter-logo-png/twitter-bird-symbols-png-logo-0.png" alt="">
+            <img src="https://cdn.leonardo.ai/users/bd3b9048-6217-4c06-82db-bbfbace249f0/generations/700533ea-3196-4423-8d88-add5db3d7324/Leonardo_Diffusion_XL_make_a_logo_of_Hospital_name_Care_2.jpg" alt="logo" >
         </div>
         <div class="text-center mt-4 name">
             Care
@@ -166,7 +166,7 @@ if(mysqli_num_rows($Response)){
     $Data=mysqli_fetch_array($Response);
     session_start();
     $_SESSION["username"]=$Data[1];
-    echo "<script>window.location.href='../index.php';</script>";
+    echo "<script>window.location.href='./index.php';</script>";
 
 
 
@@ -180,6 +180,6 @@ else{
 
 }
 else{
-    echo "<script>window.location.href='../index.php';</script>";
+    echo "<script>window.location.href='./login.php';</script>";
 }
 ?>

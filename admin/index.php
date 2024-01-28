@@ -13,7 +13,7 @@ if($_SESSION["username"]!= "" ){
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title>Care Admin2 </title>
+  <title>Care</title>
   
 
   <!-- plugins:css -->
@@ -33,8 +33,6 @@ if($_SESSION["username"]!= "" ){
   <!-- endinject -->
   <link rel="shortcut icon" href="images/favicon.png" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
-
 
 
 
@@ -44,6 +42,7 @@ if($_SESSION["username"]!= "" ){
     <!-- partial:partials/_navbar.html -->
    <?php
    include_once("header.php");
+   include_once("headerscript.php");
    ?>
   
   <!-- container-scroller -->
@@ -239,8 +238,10 @@ if($_SESSION["username"]!= "" ){
 include_once("footer.php");
 ?>
 
-  
 
+
+  
+</body>
   <!-- plugins:js -->
   <script src="vendors/js/vendor.bundle.base.js"></script>
   <!-- endinject -->
@@ -262,10 +263,7 @@ include_once("footer.php");
   <script src="js/Chart.roundedBarCharts.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/js/all.min.js" integrity="sha512-GWzVrcGlo0TxTRvz9ttioyYJ+Wwk9Ck0G81D+eO63BaqHaJ3YZX9wuqjwgfcV/MrB2PhaVX9DkYVhbFpStnqpQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <!-- End custom js for this page-->
-</body>
-
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-
+ 
 </html>
 <?php
 }

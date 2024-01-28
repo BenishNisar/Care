@@ -63,6 +63,7 @@ table:hover{
     <!-- partial:partials/_navbar.html -->
    <?php
    include_once("header.php");
+   include_once("headerscript.php");
    ?>
  
 
@@ -70,7 +71,7 @@ table:hover{
                        
  <div class="container py-5">
   <header class="text-center text-dark">
-    <h1 class="display-4">Doctor Account</h1>
+    <h1 class="display-4">Hospitals</h1>
     <p class="lead mb-0"  id="changingText"><b>"Embrace each day as an opportunity to nourish your body, challenge your mind, and cultivate a life filled with balance, for in the pursuit of a healthy life, you discover the true richness of well-being."</b></p>
    
   </header>
@@ -188,7 +189,7 @@ include_once("footer.php");
       var changingText = document.getElementById('changingText');
 
       setInterval(function () {
-        changingText.innerHTML =  "Certainly! Here's a sample appointment quote you can use:Your health is an investment, not an expense. Schedule your appointment today and prioritize the well-being that empowers your tomorrows. Your journey to a healthier life.";
+        changingText.innerHTML =  "Where compassion meets expertise, and healing is a promise kept – Your well-being is our only priority.";
       }, 5000);
     
     });

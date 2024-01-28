@@ -42,6 +42,7 @@ $Id=$_GET["id"];
     <!-- partial:partials/_navbar.html -->
    <?php
    include_once("header.php");
+   include_once("headerscript.php");
    ?>
 
 
@@ -105,21 +106,22 @@ $Data=mysqli_fetch_array($Result);
 
 
             <div class="col-sm-6 col-md-6">
-              <label for="text" class="form-label">Specialty<label>
-              <input type="text" class="form-control" name="specialty"  value="<?php echo $Data[5]; ?>" id="text" placeholder="Enter a Text"  required>
+              <label for="text" class="form-label">Specialty</label>
+              <input type="text" class="form-control" name="specialty" value="<?php echo $Data[5]; ?>"  id="text" placeholder="Enter a Text"  required>
               <div class="invalid-feedback">
                 Valid first name is required.
               </div>
             </div>
 
-            <div class="col-md-6">
-        <label for="" class="form-label">Image</label>
-<input type="file" name="image"  value="<?php echo $Data[6]; ?>" id="">
+
+            <div class="col-sm-6 col-md-6 col-lg-6">
+              <label for="text" class="form-label">Image</label>
+              <input type="file" class="form-control" name="image" value="<?php echo $Data[6]; ?>"  id="user" placeholder="Enter a Disease Name"  required>
               <div class="invalid-feedback">
-                Please enter your shipping address.
+                Valid first name is required.
               </div>
             </div>
-          
+
 
 
 
@@ -132,19 +134,24 @@ $Data=mysqli_fetch_array($Result);
               </div>
             </div>
            
-            <div class="col-sm-6 col-md-6 col-lg-6">
-              <label for="text" class="form-label">Password</label>
-              <input type="password" class="form-control" name="password"  value="<?php echo $Data[8]; ?>" id="user"   required>
-              <div class="invalid-feedback">
-                Valid first name is required.
-              </div>
+            <div class="col-sm-6 col-md-6">
+    <div class="form-group">
+    <label for="password" class="form-label">Password</label>
+        <div class="input-group">
+            <input type="password" class="form-control"  name="password" value="<?php echo $Data[8]; ?>"   id="password" placeholder="Enter a Password" required>
+            <div class="input-group-append">
+                <span class="input-group-text" style="height:33px" id="password-eye">👁️</span>
             </div>
+        </div>
+    </div>
+</div>
+
   
   
 
             <div class="col-sm-6 col-md-6 col-lg-6">
               <label for="text" class="form-label">Phone Number</label>
-              <input type="text" class="form-control" name="phonenumber"  value="<?php echo $Data[9]; ?>" id="user" placeholder="Enter a Disease Name"  required>
+              <input type="text" class="form-control" name="phonenumber"  value="<?php echo $Data[9]; ?>" id="user" placeholder="Enter Your PhoneNumber"  required>
               <div class="invalid-feedback">
                 Valid first name is required.
               </div>
@@ -152,7 +159,7 @@ $Data=mysqli_fetch_array($Result);
 
             <div class="col-sm-6 col-md-6 col-lg-6">
               <label for="text" class="form-label">Address</label>
-              <textarea name="address"  value="<?php echo $Data[10]; ?>" id="" class="form-control"  cols="30" rows="10"></textarea>
+              <textarea name="address"  value="<?php echo $Data[10]; ?>" id="" class="form-control"   rows="10"></textarea>
 
               <!-- <input type="text" class="form-control" name="address" id="user" placeholder="Enter a Disease Name"  required> -->
               <div class="invalid-feedback">
@@ -214,6 +221,22 @@ $Data=mysqli_fetch_array($Result);
 include_once("footer.php");
 ?>
 
+<script>
+       const passwordInput = document.getElementById('password');
+    const passwordEye = document.getElementById('password-eye');
+
+    passwordEye.addEventListener('click', togglePasswordVisibility);
+
+    function togglePasswordVisibility() {
+      if (passwordInput.type === 'password') {
+        passwordInput.type = 'text';
+        passwordEye.textContent = '👁️';
+      } else {
+        passwordInput.type = 'password';
+        passwordEye.textContent = '👁️';
+      }
+    }
+  </script>
   
 
   <!-- plugins:js -->

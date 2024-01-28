@@ -44,6 +44,7 @@ color:blue;
     <!-- partial:partials/_navbar.html -->
    <?php
    include_once("header.php");
+   include_once("headerscript.php");
    ?>
 
 
@@ -99,22 +100,21 @@ color:blue;
 
 
             <div class="col-sm-6 col-md-6">
-              <label for="text" class="form-label">Specialty<label>
+              <label for="text" class="form-label">Specialty</label>
               <input type="text" class="form-control" name="specialty" id="text" placeholder="Enter a Text"  required>
               <div class="invalid-feedback">
                 Valid first name is required.
               </div>
             </div>
 
-            <div class="col-md-6">
-        <label for="" class="form-label">Image</label>
-<input type="file" name="image" id="">
+
+            <div class="col-sm-6 col-md-6 col-lg-6">
+              <label for="text" class="form-label">Image</label>
+              <input type="file" class="form-control" name="image" id="user" placeholder="Enter a Disease Name"  required>
               <div class="invalid-feedback">
-                Please enter your shipping address.
+                Valid first name is required.
               </div>
             </div>
-          
-
 
 
           
@@ -126,33 +126,41 @@ color:blue;
               </div>
             </div>
            
-            <div class="col-sm-6 col-md-6 col-lg-6">
-              <label for="text" class="form-label">Password</label>
-              <input type="password" class="form-control" name="password" id="user"   required>
-              <div class="invalid-feedback">
-                Valid first name is required.
-              </div>
+            <!-- button -->
+            <div class="col-sm-6 col-md-6">
+    <div class="form-group">
+    <label for="password" class="form-label">Password</label>
+        <div class="input-group">
+            <input type="password" class="form-control"  name="password"  id="password" placeholder="Enter a Password" required>
+            <div class="input-group-append">
+                <span class="input-group-text" style="height:33px" id="password-eye">👁️</span>
             </div>
+        </div>
+    </div>
+</div>
+
   
   
 
             <div class="col-sm-6 col-md-6 col-lg-6">
               <label for="text" class="form-label">Phone Number</label>
-              <input type="text" class="form-control" name="phonenumber" id="user" placeholder="Enter a Disease Name"  required>
+              <input type="text" class="form-control" name="phonenumber" id="user" placeholder="Enter a Phone Number"  required>
               <div class="invalid-feedback">
                 Valid first name is required.
               </div>
             </div>
+
+           
 
             <div class="col-sm-6 col-md-6 col-lg-6">
-              <label for="text" class="form-label">Address</label>
-              <textarea name="address" id="" class="form-control"  cols="30" rows="10"></textarea>
+  <label for="text" class="form-label">Address</label>
+  <!-- <input type="text" class="form-control" name="address" id="user" placeholder="Enter a Disease Name"  required> -->
+  <textarea name="address" id="" class="form-control"  rows="5"></textarea>
+  <div class="invalid-feedback">
+    Valid first name is required.
+  </div>
+</div>
 
-              <!-- <input type="text" class="form-control" name="address" id="user" placeholder="Enter a Disease Name"  required> -->
-              <div class="invalid-feedback">
-                Valid first name is required.
-              </div>
-            </div>
 
 
   
@@ -207,7 +215,22 @@ color:blue;
 include_once("footer.php");
 ?>
 
-  
+  <script>
+       const passwordInput = document.getElementById('password');
+    const passwordEye = document.getElementById('password-eye');
+
+    passwordEye.addEventListener('click', togglePasswordVisibility);
+
+    function togglePasswordVisibility() {
+      if (passwordInput.type === 'password') {
+        passwordInput.type = 'text';
+        passwordEye.textContent = '👁️';
+      } else {
+        passwordInput.type = 'password';
+        passwordEye.textContent = '👁️';
+      }
+    }
+  </script>
 
   <!-- plugins:js -->
   <script src="vendors/js/vendor.bundle.base.js"></script>

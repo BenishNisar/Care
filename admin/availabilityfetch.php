@@ -62,6 +62,7 @@ table:hover{
     <!-- partial:partials/_navbar.html -->
    <?php
    include_once("header.php");
+   include_once("headerscript.php");
    ?>
  
 
@@ -95,21 +96,21 @@ include("connection.php");
 $Query="SELECT availability.avaliabilityid, doctoraccount.username, availability.dayavailability, availability.weekavailability,availability.monthavalibility FROM availability INNER JOIN doctoraccount ON availability.doctorid = doctoraccount.id;";
 $Response=mysqli_query($Db,$Query);
 if(mysqli_num_rows($Response)){
-    while($Data=mysqli_fetch_array($Response)){
+    while($DataRes=mysqli_fetch_array($Response)){
 
  ?>
 
 <tr class="text-dark">
-    <td><?php echo $Data[0]; ?></td>
-    <td><?php echo $Data[1]; ?></td>
-    <td><?php echo $Data[2]; ?></td>
-    <td><?php echo $Data[3]; ?></td>
-    <td><?php echo $Data[4]; ?></td>
+    <td><?php echo $DataRes[0]; ?></td>
+    <td><?php echo $DataRes[1]; ?></td>
+    <td><?php echo $DataRes[2]; ?></td>
+    <td><?php echo $DataRes[3]; ?></td>
+    <td><?php echo $DataRes[4]; ?></td>
   
  
   
 
-    <td><a href="availablilitydelete.php?avaliabilityid=<?php echo $Data[0]; ?>"><button class="btn btn-primary">Delete</button></a></td>
+    <td><a href="availablilitydelete.php?avaliabilityid=<?php echo $DataRes[0]; ?>"><button class="btn btn-primary">Delete</button></a></td>
    
 </tr>
 <?php

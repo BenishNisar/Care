@@ -58,6 +58,7 @@
     <!-- partial:partials/_navbar.html -->
    <?php
    include_once("header.php");
+   include_once("headerscript.php");
    ?>
 
 
@@ -188,6 +189,9 @@ include_once("footer.php");
 ?>
 
   
+
+
+
 
   <!-- plugins:js -->
   <script src="vendors/js/vendor.bundle.base.js"></script>

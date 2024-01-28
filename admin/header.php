@@ -7,19 +7,22 @@
           </button>
         </div>
         <div>
-          <a class="navbar-brand brand-logo" href="index.html">
-            <img src="images/logo.svg" alt="logo" width="250px">
+          <a class="navbar-brand brand-logo" style="width:200px"href="index.php">
+            <img src="images/carelogore.png" alt="logo"
+            class="logo" style="width:200px; height: 90px;margin-left:-50px;">
           </a>
-          <a class="navbar-brand brand-logo-mini" href="index.html">
-            <img src="images/logo-mini.svg" alt="logo" />
+          <a class="navbar-brand brand-logo-mini" href="index.php">
+            <img src="images/carelogore.png" alt="logo" />
           </a>
         </div>
       </div>
       <div class="navbar-menu-wrapper d-flex align-items-top"> 
         <ul class="navbar-nav">
           <li class="nav-item font-weight-semibold d-none d-lg-block ms-0">
-            <h1 class="welcome-text">Good Morning, <span class="text-black fw-bold">Benish</span></h1>
-            <h3 class="welcome-sub-text">Your performance summary this week </h3>
+            <h1 class="welcome-text"  id="greeting"> <span class="text-black fw-bold"></span>
+    
+          </h1>
+            <h3 class="welcome-sub-text" id="slogan">"Your Health, Our Priority at Care Hospital."</h3>
           </li>
         </ul>
         <ul class="navbar-nav ms-auto">
@@ -194,7 +197,7 @@
       
       <!-- partial -->
       <!-- partial:partials/_sidebar.html -->
-      <nav class="sidebar sidebar-offcanvas" id="sidebar" style="Width:270px;margin-left:-20px;">
+      <nav class="sidebar sidebar-offcanvas" id="sidebar" style="">
         <ul class="nav">
 
        
@@ -279,15 +282,38 @@
           </li>
           
        
+          <li class="nav-item">
+            <a class="nav-link" href="sliderfetch.php">
+             
+              <span class="menu-title">Slider</span>
+            </a>
+          </li>
+          
 
-
+          <li class="nav-item">
+            <a class="nav-link" href="contactfetch.php">
+             
+              <span class="menu-title">Contact</span>
+            </a>
+          </li>
           
     
 
 
+          <li class="nav-item">
+            <a class="nav-link" href="hospitaldatafetch.php">
+             
+              <span class="menu-title">Hospital Data</span>
+            </a>
+          </li>
 
          
-          
+          <li class="nav-item">
+            <a class="nav-link" href="servicefetch.php">
+             
+              <span class="menu-title">Services</span>
+            </a>
+          </li>
 
         
 
