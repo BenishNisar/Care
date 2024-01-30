@@ -1,3 +1,8 @@
+<?php
+
+session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,11 +20,12 @@ include_once("headerstyle.php");
 <body>
 
 
-	
+
 
 <?php
 	include_once("headerfront.php");
 ?>
+
 <div class="container">
 <div class="row">
 

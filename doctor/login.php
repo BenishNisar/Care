@@ -1,7 +1,7 @@
 <?php
 session_start();
 error_reporting(0);
-if($_SESSION["username"] == ""){
+if($_SESSION["doctorname"] == ""){
 ?>
 
 
@@ -179,6 +179,6 @@ else{
 
 }
 else{
-    echo "<script>window.location.href='./login.php';</script>";
+    echo "<script>window.location.href='./index.php';</script>";
 }
 ?>

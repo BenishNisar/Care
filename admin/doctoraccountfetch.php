@@ -112,7 +112,7 @@ if(mysqli_num_rows($Response)){
 <tr class="text-dark">
     <td><?php echo $Data[0]; ?></td>
     <td><?php echo $Data[1]; ?></td>
-    <td><img src="./images/<?php echo $Data[2];?>"  width="100px" height="80px"></td>
+    <td><img src="./images/<?php echo $Data[2];?>"  width="100px" height="280px"></td>
   
     <td><?php echo $Data[3]; ?></td>
     <td><?php echo $Data[4]; ?></td>

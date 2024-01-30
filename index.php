@@ -1,3 +1,6 @@
+
+
+
 <!doctype html>
 <html class="no-js" lang="zxx">
     <head>
@@ -19,13 +22,20 @@ include_once("headerstyle.php");
 		
     </head>
     <body>
+		
 	
 		
 <?php
+
 	include_once("headerfront.php");
 
 ?>
-	
+
+
+
+
+
+
 	
 		
         <!-- End Preloader -->
@@ -295,7 +305,7 @@ if(mysqli_num_rows($Response)){
 
 					<?php
  $Db = mysqli_connect("localhost", "root", "", "care");
- $query="SELECT * FROM `doctoraccount`";
+ $query="SELECT * FROM `hospitaldata`";
  $result=mysqli_query($Db,$query);
  $rowcount=mysqli_num_rows($result);
 
@@ -689,43 +699,30 @@ if(mysqli_num_rows($Response)){
 		
 		<!-- Start clients -->
 		<div class="clients overlay">
-			<div class="container">
-				<div class="row">
-					<div class="col-lg-12 col-md-12 col-12">
-						<div class="owl-carousel clients-slider">
-							<div class="single-clients">
-								<img src="img/client1.png" alt="#">
-							</div>
-							<div class="single-clients">
-								<img src="img/client2.png" alt="#">
-							</div>
-							<div class="single-clients">
-								<img src="img/client3.png" alt="#">
-							</div>
-							<div class="single-clients">
-								<img src="img/client4.png" alt="#">
-							</div>
-							<div class="single-clients">
-								<img src="img/client5.png" alt="#">
-							</div>
-							<div class="single-clients">
-								<img src="img/client1.png" alt="#">
-							</div>
-							<div class="single-clients">
-								<img src="img/client2.png" alt="#">
-							</div>
-							<div class="single-clients">
-								<img src="img/client3.png" alt="#">
-							</div>
-							<div class="single-clients">
-								<img src="img/client4.png" alt="#">
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-		<!--/Ens clients -->
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-12">
+                <div class="owl-carousel clients-slider">
+                    <?php
+                    $Db = mysqli_connect("localhost", "root", "", "care");
+                    $Query = "SELECT * FROM `client`";
+                    $Response = mysqli_query($Db, $Query);
+                    if (mysqli_num_rows($Response)) {
+                        while ($Data = mysqli_fetch_array($Response)) {
+                    ?>
+                            <div class="single-clients">
+                                <img src="./admin/images/<?php echo $Data[1]; ?>" alt="#">
+                            </div>
+                    <?php
+                        }
+                    }
+                    ?>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
 		
 		
 		<!-- Start Newsletter Area -->

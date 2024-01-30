@@ -1,7 +1,8 @@
 <?php
+include_once('connection.php');
 session_start();
 error_reporting(0);
-if($_SESSION["username"]!= "" ){
+if($_SESSION["doctorname"]!= "" ){
 
 ?>
 
@@ -53,7 +54,7 @@ if($_SESSION["username"]!= "" ){
 <h1>Welcome to Doctor Dashboard
   <?php
   
-  echo $_SESSION["username"];
+  echo $_SESSION["doctorname"];
   
   
   ?>
@@ -62,12 +63,12 @@ if($_SESSION["username"]!= "" ){
 <div class="col-md-4">
 
 <div class="card mt-5 bg-primary" style="width: 12rem;height:150px;border:double black;box-shadow:10px 10px 10px gray;card:hover;background:pink;">
-<a href="appointementfetch.php" style="text-decoration:none;">
+<a href="checkappointement.php" style="text-decoration:none;">
   <div class="card-body">
    
     <h2 class="card-title text-dark">Appointment</h2>
     <?php
-      include_once('connection.php');
+      
       $query="SELECT * FROM `appointement`";
       $result=mysqli_query($Db,$query);
       $rowcount=mysqli_num_rows($result);
@@ -193,7 +194,7 @@ include_once("footer.php");
 }
 
 else{
-  echo "<script>window.location.href='../login.php';</script>";
+  echo "<script>window.location.href='./login.php';</script>";
 }
 
 ?>

@@ -1,3 +1,8 @@
+<?php
+
+session_start();
+?>
+
 <!doctype html>
 <html class="no-js" lang="zxx">
 <head>
@@ -57,82 +62,50 @@
 <section class="blog section" id="blog">
     <div class="container">
         <div class="row">
-            <?php
-            $Db = mysqli_connect("localhost", "root", "", "care");
-            $Query = "SELECT * FROM `diseases`";
-            $Response = mysqli_query($Db, $Query);
-            if (mysqli_num_rows($Response)) {
-                while ($Data = mysqli_fetch_array($Response)) {
-                    ?>
+        <?php
+$Db=mysqli_connect("localhost","root","","care");
+$Query = "SELECT    *   FROM    `diseases`";
+
+
+$Response=mysqli_query($Db,$Query);
+if(mysqli_num_rows($Response)){
+    while($Data=mysqli_fetch_array($Response)){
+
+ ?>
                     <!-- Single Blog -->
                     <div class="col-lg-4 col-md-6 col-12">
                         <div class="card mb-4">
                             <img src="./admin/images/<?php echo $Data[5]; ?>" alt="">
                             <h4><?php echo $Data[1]; ?></h4>
                             <p><?php echo $Data[2]; ?></p>
-                            <p>Prevention: <?php echo $Data[3]; ?></p>
-                            <p><strong>Cure: <?php echo $Data[4]; ?></strong></p>
-                         
+                            $selectquery    
 
-
-
-
-
-
-
-
-<!-- modal -->
 <!-- Button trigger modal -->
-<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-  Launch demo modal
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal<?php echo $Data['id']; ?>">
+  Learn More
 </button>
 
-<!-- Modal -->
 
-
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-
-      <div class="modal-header">
-
-      <?php
-include("connection.php");
-$Query="SELECT * FROM `medical_inventions`";
-$Response=mysqli_query($Db,$Query);
-if(mysqli_num_rows($Response)){
-    while($Data=mysqli_fetch_array($Response)){
-
- ?>
-
-        <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        <?php
-    }}
-
-    ?>
-      </div>
-      <div class="modal-body">
-        ...
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
-      </div>
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal<?php echo $Data['id']; ?>" tabindex="-1" aria-labelledby="exampleModalLabel<?php echo $Data['id']; ?>" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel<?php echo $Data['id']; ?>"><?php echo $Data[1]; ?></h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <h1><?php echo $Data[1]; ?></h1>
+                <p>Inventor: <?php echo $Data[3]; ?></p>
+                            <p><strong>Date: <?php echo $Data[4]; ?></strong></p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+        </div>
     </div>
-  
-    
-  </div>
 </div>
-
-<!-- modal -->
-
-
-
-
-
-
-
                             <!-- Button trigger modal -->
                         </div>
                         <!-- card -->
@@ -147,8 +120,11 @@ if(mysqli_num_rows($Response)){
             ?>
         </div>
     </div>
+
+
 </section>
 <!-- End Blog Area -->
+
 
 
 

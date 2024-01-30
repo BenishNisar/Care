@@ -12,7 +12,7 @@
 								<li><a href="about.php">About</a></li>
 								<li><a href="doctortimetable.php">Doctors</a></li>
 								<li><a href="contact.php">Contact</a></li>
-								<li><a href="#">FAQ</a></li>
+								<li><a href="ques.php">FAQ</a></li>
 							</ul>
 							<!-- End Contact -->
 						</div>
@@ -67,7 +67,7 @@ if(mysqli_num_rows($Response)){
 											<li class="active"><a href="index.php">Home </a>
 												
 											</li>
-											<li><a href="doctortimetable.php">Doctos </a></li>
+											<li><a href="doctortimetable.php">Doctors </a></li>
 											<li><a href="services.php">Services </a></li>
 											<li><a href="#">Pages <i class="icofont-rounded-down"></i></a>
 												<ul class="dropdown">
@@ -84,9 +84,23 @@ if(mysqli_num_rows($Response)){
 								<!--/ End Main Menu -->
 							</div>
 							<div class="col-lg-2 col-12">
-								<div class="get-quote">
-									<a href="bookappointment.php" class="btn">Book Appointment</a>
-								</div>
+
+							<?php
+
+$Db=mysqli_connect("localhost","root","","care");
+// Check if user is logged in, signed up, or neither
+
+if(isset($_SESSION['username'])) {
+    // User is logged in, show the book appointment button
+    echo '<a href="bookappointment.php" class="btn">Book Appointment</a>';
+}  else {
+    // User is neither logged in nor signed up, display login/signup options
+    echo '<a href="./login.php" class="btn">Login</a>';
+  
+}
+?>
+
+								
 							</div>
 						</div>
 					</div>

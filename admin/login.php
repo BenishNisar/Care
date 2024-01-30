@@ -1,7 +1,7 @@
 <?php
 session_start();
 error_reporting(0);
-if($_SESSION["username"] == ""){
+if($_SESSION["admin"] == ""){
 ?>
 
 <!DOCTYPE html>
@@ -165,7 +165,7 @@ $Response=mysqli_query($Db,$Query);
 if(mysqli_num_rows($Response)){
     $Data=mysqli_fetch_array($Response);
     session_start();
-    $_SESSION["username"]=$Data[1];
+    $_SESSION["admin"]=$Data[1];
     echo "<script>window.location.href='./index.php';</script>";
 
 
@@ -180,6 +180,6 @@ else{
 
 }
 else{
-    echo "<script>window.location.href='./login.php';</script>";
+    echo "<script>window.location.href='./index.php';</script>";
 }
 ?>

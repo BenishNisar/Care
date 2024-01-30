@@ -87,6 +87,8 @@ table:hover{
              
                   <th>Inventions Date</th>
                   <th>Image</th>
+                  <th>Diseases</th>
+               
                       <th>Edit</th>
                       <th>Delete</th>
                    
@@ -95,7 +97,9 @@ table:hover{
 
                     <?php
 include("connection.php");
-$Query="SELECT * FROM `medical_inventions`";
+$Query = "SELECT `medical_inventions.id`,`diseases.diseasename` , `medical_inventions.inventionsname`,`medical_inventions.descripation`, `medical_inventions.inventor`, `medical_inventions.inventationsdate`,`medical_inventions.image`,  `medical_inventions.diseaseid`  FROM `medical_inventions` INNER JOIN `diseases` ON `medical_inventions.diseaseid` = `diseases`.id;";
+
+
 $Response=mysqli_query($Db,$Query);
 if(mysqli_num_rows($Response)){
     while($Data=mysqli_fetch_array($Response)){
@@ -110,6 +114,8 @@ if(mysqli_num_rows($Response)){
     <td><?php echo $Data[4]; ?></td>
     
     <td><img src="./images/<?php echo $Data[5];?>" width="100px" height="80px"></td>
+    <td><?php echo $Data[6]; ?></td>
+    
     
 <td><a href="medicalinventionsedit.php?id=<?php echo $Data[0]; ?>"><button class="btn btn-primary">Edit</button></a></td>
     <td><a href="medicalinventionsdelete.php?id=<?php echo $Data[0]; ?>"><button class="btn btn-primary">Delete</button></a></td>

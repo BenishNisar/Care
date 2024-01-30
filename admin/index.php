@@ -1,7 +1,7 @@
 <?php
 session_start();
 error_reporting(0);
-if($_SESSION["username"]!= "" ){
+if($_SESSION["admin"]!= "" ){
 
 ?>
 
@@ -269,7 +269,7 @@ include_once("footer.php");
 }
 
 else{
-  echo "<script>window.location.href='../login.php';</script>";
+  echo "<script>window.location.href='./login.php';</script>";
 }
 
 ?>
