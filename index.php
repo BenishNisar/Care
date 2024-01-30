@@ -1,4 +1,6 @@
-
+<?php
+session_start();
+?>
 
 
 <!doctype html>
@@ -26,8 +28,9 @@ include_once("headerstyle.php");
 	
 		
 <?php
-
+include_once("preloader.php");
 	include_once("headerfront.php");
+	
 
 ?>
 
