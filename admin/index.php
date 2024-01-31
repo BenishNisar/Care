@@ -53,7 +53,7 @@ if($_SESSION["admin"]!= "" ){
 <h1>Welcome to Dashboard
   <?php
   
-  echo $_SESSION["username"];
+  echo $_SESSION["admin"];
   
   
   ?>

@@ -92,10 +92,10 @@ $Db=mysqli_connect("localhost","root","","care");
 
 if(isset($_SESSION['username'])) {
     // User is logged in, show the book appointment button
-    echo '<a href="bookappointment.php" class="btn">Book Appointment</a>';
+    echo '<a href="bookappointment.php" class="btn text-light mt-2">Book Appointment</a>';
 }  else {
     // User is neither logged in nor signed up, display login/signup options
-    echo '<a href="./login.php" class="btn">Login</a>';
+    echo '<a href="./login.php" class="btn text-light mt-2">Login</a>';
   
 }
 ?>

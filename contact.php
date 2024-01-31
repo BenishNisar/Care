@@ -43,7 +43,7 @@ session_start();
 						<div class="col-12">
 							<h2>Contact Us</h2>
 							<ul class="bread-list">
-								<li><a href="index.html">Home</a></li>
+								<li><a href="index.php">Home</a></li>
 								<li><i class="icofont-simple-right"></i></li>
 								<li class="active">Contact Us</li>
 							</ul>

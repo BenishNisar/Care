@@ -66,11 +66,11 @@ if(mysqli_num_rows($Response)){
                             <img src="./admin/images/<?php echo $Data[5]; ?>" alt="">
                             <h4><?php echo $Data[1]; ?></h4>
                             <p><?php echo $Data[2]; ?></p>
-                            $selectquery    
+                          
 
 <!-- Button trigger modal -->
 <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal<?php echo $Data['id']; ?>">
-  Learn More
+Learn More 
 </button>
 
 

@@ -139,8 +139,30 @@ include_once("headerstyle.php");
             </div>
 
             <div class="col-sm-6">
-              <label for="text" class="form-label">Hospital</label>
-              <input type="text" class="form-control" name="hospital" id="text" placeholder="Enter a hospital"  required>
+              <label for="text" class="form-label">Hospitals</label>
+              <!-- <input type="text" class="form-control" name="" id="text" placeholder="Enter a hospital"  required> -->
+              <select name="hospital"class="form-control" id="">
+<?php
+ $Db = mysqli_connect("localhost", "root", "", "care");
+                  $query="SELECT * FROM `hospitals`";
+                  $reuslt=mysqli_query($Db,$query);
+                  if(mysqli_num_rows($reuslt)){
+                    while($row=mysqli_fetch_array($reuslt))
+                    {
+                   
+                ?>
+                <option value="<?php echo $row[1];?>"><?php echo $row[1];?></option>
+                <?php 
+                  }
+                }
+                ?>
+
+
+</select>
+              
+              
+              
+              
               <div class="invalid-feedback">
                 Valid first name is required.
               </div>

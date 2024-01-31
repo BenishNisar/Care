@@ -58,7 +58,7 @@ $Data=mysqli_fetch_array($Result);
    <div class="container">
     <div class="row">
 
-      <div class="col-md-6 col-lg-6" style="margin-left:20px;">
+      
         <h4 class="mb-3">Welcome</h4>
         <form action="#" method="POST" enctype="multipart/form-data" class="needs-validation" novalidate>
           <div class="row g-3">
@@ -92,8 +92,13 @@ $Data=mysqli_fetch_array($Result);
 
 
             <div class="col-sm-6">
-              <label for="text" class="form-label">Department</label>
-              <input type="text" class="form-control" name="department" value="<?php echo $Data[4]; ?>" id="text"  placeholder=" Enter Your Department"  required>
+             
+              <label for="text" class="form-label">Departments</label>
+              <select name="department"  value="<?php echo $Data[4]; ?>" class="form-control">
+                <option value="General medicine ward">General medicine ward</option>
+                <option value="ICU">ICU</option>
+              </select>
+              <!-- <input type="text" class="form-control" name="department" id="text"  placeholder=" Enter Your Department"  required> -->
               <div class="invalid-feedback">
                 Valid first name is required.
               </div>
@@ -105,14 +110,53 @@ $Data=mysqli_fetch_array($Result);
 
             <div class="col-sm-6">
               <label for="doctor" class="form-label">Doctor</label>
-              <input type="text" class="form-control" name="doctor" value="<?php echo $Data[5]; ?>" id="text"  placeholder="Enter a Doctor"  required>
+              <!-- <input type="text" class="form-control" name="doctor"  id="text"  placeholder="Enter a Doctor"  required> -->
+              
+              
+              <select name="doctor" value="<?php echo $Data[5]; ?>" class="form-control">
+                <?php
+                include_once("connection.php");
+                  $query="SELECT * FROM `doctoraccount`";
+                  $reuslt=mysqli_query($Db,$query);
+                  if(mysqli_num_rows($reuslt)){
+                    while($row=mysqli_fetch_array($reuslt))
+                    {
+                   
+                ?>
+                <option value="<?php echo $row[1];?>"><?php echo $row[1];?></option>
+                <?php 
+                  }
+                }
+                ?>
+
+              </select>
               <div class="invalid-feedback">
                 Valid first name is required.
               </div>
             </div>
             <div class="col-sm-6">
               <label for="text" class="form-label">City</label>
-              <input type="text" class="form-control" name="city" value="<?php echo $Data[6]; ?>" id="text" placeholder="Enter a city"  required>
+              <!-- <input type="text" class="form-control" name="city" id="text" placeholder="Enter a city"  required> -->
+              
+<select name="city"  value="<?php echo $Data[6]; ?>" class="form-control" id="">
+<?php
+                  $query="SELECT * FROM `cities`";
+                  $reuslt=mysqli_query($Db,$query);
+                  if(mysqli_num_rows($reuslt)){
+                    while($row=mysqli_fetch_array($reuslt))
+                    {
+                   
+                ?>
+                <option value="<?php echo $row[1];?>"><?php echo $row[1];?></option>
+                <?php 
+                  }
+                }
+                ?>
+
+
+</select>
+              
+              
               <div class="invalid-feedback">
                 Valid first name is required.
               </div>
@@ -120,7 +164,26 @@ $Data=mysqli_fetch_array($Result);
 
             <div class="col-sm-6">
               <label for="text" class="form-label">Hospital</label>
-              <input type="text" class="form-control" name="hospital" value="<?php echo $Data[7]; ?>" id="text" placeholder="Enter a hospital"  required>
+              <!-- <input type="text" class="form-control" name="hospital" value="<?php echo $Data[7]; ?>" id="text" placeholder="Enter a hospital"  required> -->
+              <select name="hospital" class="form-control">
+                <?php
+                
+                  $query="SELECT * FROM `hospitals`";
+                  $reuslt=mysqli_query($Db,$query);
+                  if(mysqli_num_rows($reuslt)){
+                    while($row=mysqli_fetch_array($reuslt))
+                    {
+                   
+                ?>
+                <option value="<?php echo $row[1];?>"><?php echo $row[1];?></option>
+                <?php 
+                  }
+                }
+                ?>
+
+              </select>
+            
+              
               <div class="invalid-feedback">
                 Valid first name is required.
               </div>
@@ -137,7 +200,7 @@ $Data=mysqli_fetch_array($Result);
 
   
   
-            <div class="col-sm-12">
+            <div class="col-sm-6">
 <div class="form-group mt-2">
 <label class="text-dark" for="">Message</label>
 <textarea name="message"  value="<?php echo $Data[9]; ?>"  class="form-control" rows="5"></textarea>
@@ -148,7 +211,7 @@ $Data=mysqli_fetch_array($Result);
 
 
 
-<div class="col-sm-12">
+<div class="col-sm-6">
               <label for="text" class="form-label">Time</label>
               <input type="time" class="form-control" name="time"  value="<?php echo $Data[10]; ?>" id="text" placeholder="Enter a time"  required>
               <div class="invalid-feedback">
@@ -169,7 +232,7 @@ $Data=mysqli_fetch_array($Result);
           <button class=" btn btn-primary  float-right col-sm-4" name="submit" type="submit">Submit</button>
         </form>
       </div>
-    </div>
+    
     </div>
 <!-- row -->
   </div>

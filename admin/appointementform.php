@@ -48,7 +48,7 @@ $Connection=mysqli_connect("localhost","root","","care");
     </div>
     <div class="container">
     <div class="row" style="margin-left:20px;">
-        <h4 class="mb-3">Welcome</h4>
+        <h4 class="mb-3">Appointement</h4>
         <form action="#" method="POST" enctype="multipart/form-data" class="needs-validation" novalidate>
           <div class="row g-3">
           <div class="col-sm-6">
@@ -100,8 +100,9 @@ $Connection=mysqli_connect("localhost","root","","care");
               <label for="doctor" class="form-label">Doctors</label>
               <select name="doctor" class="form-control">
                 <?php
+                include_once("connection.php");
                   $query="SELECT * FROM `doctoraccount`";
-                  $reuslt=mysqli_query($Connection,$query);
+                  $reuslt=mysqli_query($Db,$query);
                   if(mysqli_num_rows($reuslt)){
                     while($row=mysqli_fetch_array($reuslt))
                     {
@@ -126,7 +127,7 @@ $Connection=mysqli_connect("localhost","root","","care");
 <select name="city"class="form-control" id="">
 <?php
                   $query="SELECT * FROM `cities`";
-                  $reuslt=mysqli_query($Connection,$query);
+                  $reuslt=mysqli_query($Db,$query);
                   if(mysqli_num_rows($reuslt)){
                     while($row=mysqli_fetch_array($reuslt))
                     {
@@ -148,8 +149,27 @@ $Connection=mysqli_connect("localhost","root","","care");
             </div>
 
             <div class="col-sm-6">
-              <label for="text" class="form-label">Hospital</label>
-              <input type="text" class="form-control" name="hospital" id="text" placeholder="Enter a hospital"  required>
+              <label for="text" class="form-label">Hospitals</label>
+              <select name="hospital" class="form-control">
+                <?php
+                
+                  $query="SELECT * FROM `hospitals`";
+                  $reuslt=mysqli_query($Db,$query);
+                  if(mysqli_num_rows($reuslt)){
+                    while($row=mysqli_fetch_array($reuslt))
+                    {
+                   
+                ?>
+                <option value="<?php echo $row[1];?>"><?php echo $row[1];?></option>
+                <?php 
+                  }
+                }
+                ?>
+
+              </select>
+            
+            
+            
               <div class="invalid-feedback">
                 Valid first name is required.
               </div>
