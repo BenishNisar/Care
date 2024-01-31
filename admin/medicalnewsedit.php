@@ -236,10 +236,10 @@ include_once("footer.php");
 <?php
 if(isset($_POST["submit"])){
     include("connection.php");
-    $Headlines=$_POST["headlines"];
-    $Content=$_POST["content"];
+    $Headlines=mysqli_real_escape_string($Db,$_POST["headlines"]);
+    $Content=mysqli_real_escape_string($Db,$_POST["content"]);
     $PublicDate=$_POST["publicdate"];
-    $Source=$_POST["source"];
+    $Source=mysqli_real_escape_string($Db,$_POST["source"]);
     $Image=$_FILES['image']['name'];
     $tmp_name=$_FILES['image']['tmp_name'];
     $Path="./images/".$Image;

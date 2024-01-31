@@ -63,7 +63,7 @@ color:blue;
           <div class="row g-3">
           <div class="col-sm-6 col-md-12 col-lg-12">
               <label for="email" class="form-label">Diseases Name</label>
-              <input type="email" class="form-control" name="diseasesname" id="user" placeholder="Enter a Disease Name"  required>
+              <input type="email" class="form-control" name="diseasename" id="user" placeholder="Enter a Disease Name"  required>
               <div class="invalid-feedback">
                 Valid first name is required.
               </div>
@@ -82,8 +82,10 @@ color:blue;
             <!-- button -->
 
             <div class="col-sm-6 col-md-12">
-              <label for="phone" class="form-label">Preventation</label>
-              <input type="phone" class="form-control"  name="preventation" id="phone" placeholder="Preventation"  required>
+              <label for="" class="form-label">Preventation</label>
+              <!-- <input type="phone" class="form-control"  name="" id="phone" placeholder="Preventation"  required> -->
+              
+              <textarea class="form-control" id="description" name="preventation" rows="5"></textarea>
               <div class="invalid-feedback">
                 Valid first name is required.
               </div>
@@ -206,30 +208,25 @@ include_once("footer.php");
 </html>
 
 
-
 <?php
 if(isset($_POST["submit"])){
     include("connection.php");
-    $DiseasesName=$_POST["diseasesname"];
-    $Descripation=$_POST["descripation"];
-    $Preventation=$_POST["preventation"];
-    $Cure=$_POST["cure"];
+    $DiseasesName=mysqli_real_escape_string($Db,$_POST["diseasename"]);
+    $Descripation=mysqli_real_escape_string($Db,$_POST["descripation"]);
+    $Preventation=mysqli_real_escape_string($Db,$_POST["preventation"]);
+    $Cure=mysqli_real_escape_string($Db,$_POST["cure"]);
     $Image=$_FILES['image']['name'];
     $tmp_name=$_FILES['image']['tmp_name'];
     $Path="./images/".$Image;
     move_uploaded_file($tmp_name,$Path);
 
-  
-  
-    $Query="INSERT INTO `diseases`(`id`, `diseasename`, `descripation`, `preventation`, `cure`, `image`) VALUES (NULL,'$DiseasesName','$Descripation','$Preventation','$Cure','$Image')";
+    // Corrected query definition
+    $Query="INSERT INTO `diseases`(`id`, `diseasename`, `descripation`, `preventation`, `cure`, `image`)
+     VALUES (NULL,'$DiseasesName','$Descripation','$Preventation','$Cure','$Image')";
 
+    mysqli_query($Db,$Query);
 
-mysqli_query($Db,$Query);
-
-echo "<script>window.location.href='diseasesfetch.php';</script>";
-
-
+    echo "<script>window.location.href='diseasesfetch.php';</script>";
 }
-
-
 ?>
+

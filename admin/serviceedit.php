@@ -213,9 +213,9 @@ include_once("footer.php");
 if(isset($_POST["submit"])){
  include("connection.php");
 
- $Title=$_POST["title"];
+ $Title=mysqli_real_escape_string($Db,$_POST["title"]);
   
- $Description=$_POST["descripation"];
+ $Description=mysqli_real_escape_string($Db,$_POST["descripation"]);
  
 
  $Image=$_FILES['image']['name'];

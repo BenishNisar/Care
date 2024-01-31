@@ -155,19 +155,34 @@ if(mysqli_num_rows($Response)){
 									<div class="icon">
 										<i class="icofont-ui-clock"></i>
 									</div>
+									<?php
+		
+		$Db = mysqli_connect("localhost", "root", "", "care");
+$Query = "SELECT * FROM `openinghours`";
+
+
+$Response=mysqli_query($Db,$Query);
+if(mysqli_num_rows($Response)){
+    while($Data=mysqli_fetch_array($Response)){
+
+ ?>
 									<div class="single-content">
 
-
+	
 										<span></span>
 										<h4>Opening Hours</h4>
 										<ul class="time-sidual">
-											<li class="day">Day</li>
-											<li class="day">Week: </li>
-											<li class="day">Month: </li>
+											<li class="day">Day:<?php echo $Data[1]; ?></li>
+											<li class="day">Week:<?php echo $Data[2]; ?> </li>
+											<li class="day">Month:<?php echo $Data[3]; ?> </li>
 										</ul>
 										<a href="#">LEARN MORE<i class="fa fa-long-arrow-right"></i></a>
 				
 									</div>
+
+									<?php
+	}}
+									?>
 								</div>
 							</div>
 						</div>

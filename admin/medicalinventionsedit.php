@@ -239,9 +239,9 @@ include_once("footer.php");
 <?php
 if(isset($_POST["submit"])){
     include("connection.php");
-    $InventionsName=$_POST["inventionsname"];
-    $Descripation=$_POST["descripation"];
-    $Inventor=$_POST["inventor"];
+    $InventionsName=mysqli_real_escape_string($Db,$_POST["inventionsname"]);
+    $Descripation=mysqli_real_escape_string($Db,$_POST["descripation"]);
+    $Inventor=mysqli_real_escape_string($Db,$_POST["inventor"]);
     $Image=$_POST["image"];
     $Image=$_FILES['image']['name'];
     $tmp_name=$_FILES['image']['tmp_name'];

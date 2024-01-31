@@ -250,9 +250,9 @@ include_once("footer.php");
 if(isset($_POST["submit"])){
     include("connection.php");
     
-    $Title=$_POST["title"];
-    $Subtitle=$_POST["subtitle"];
-    $Description=$_POST["description"];
+    $Title=mysqli_real_escape_string($Db,$_POST["title"]);
+    $Subtitle=mysqli_real_escape_string($Db,$_POST["subtitle"]);
+    $Description=mysqli_real_escape_string($Db,$_POST["description"]);
     $Button=$_POST["button"];
    
     $Sliderimage=$_FILES['sliderimage']['name'];

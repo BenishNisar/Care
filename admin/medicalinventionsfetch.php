@@ -97,8 +97,7 @@ table:hover{
 
                     <?php
 include("connection.php");
-$Query = "SELECT * FROM `medical_inventions`";
-
+$Query="SELECT * FROM `medical_inventions`";
 
 $Response=mysqli_query($Db,$Query);
 if(mysqli_num_rows($Response)){

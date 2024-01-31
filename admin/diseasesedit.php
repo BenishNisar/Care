@@ -97,7 +97,8 @@ $Data=mysqli_fetch_array($Result);
 
             <div class="col-sm-6 col-md-12">
               <label for="phone" class="form-label">Preventation</label>
-              <input type="phone" class="form-control"  name="preventation" value="<?php echo $Data[3]; ?>" id="phone" placeholder="Preventation"  required>
+              <!-- <input type="phone" class="form-control"  name="preventation"  id="phone" placeholder="Preventation"  required> -->
+              <textarea name="preventation" value="<?php echo $Data[3]; ?>" style="height:250px" class="form-control" rows="5"></textarea>
               <div class="invalid-feedback">
                 Valid first name is required.
               </div>
@@ -116,7 +117,7 @@ $Data=mysqli_fetch_array($Result);
 
             <div class="col-sm-6 col-md-12 mt-5">
         <label for="" class="form-label">Image</label>
-<input type="file" name="image" value="<?php echo $Data[5]; ?>"  id="">
+<input type="file" name="image" class="form-control" value="<?php echo $Data[5]; ?>"  id="">
               <div class="invalid-feedback">
                 Please enter your shipping address.
               </div>
@@ -217,10 +218,10 @@ include_once("footer.php");
 <?php
 if(isset($_POST["submit"])){
     include("connection.php");
-    $DiseasesName=$_POST["diseasesname"];
-    $Descripation=$_POST["descripation"];
-    $Preventation=$_POST["preventation"];
-    $Cure=$_POST["cure"];
+    $DiseasesName=mysqli_real_escape_string($Db,$_POST["diseasesname"]);
+    $Descripation=mysqli_real_escape_string($Db,$_POST["descripation"]);
+    $Preventation=mysqli_real_escape_string($Db,$_POST["preventation"]);
+    $Cure=mysqli_real_escape_string($Db,$_POST["cure"]);
     $Image=$_FILES['image']['name'];
     $tmp_name=$_FILES['image']['tmp_name'];
     $Path="./images/".$Image;

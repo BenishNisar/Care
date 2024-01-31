@@ -250,16 +250,16 @@ include_once("footer.php");
 <?php
 if(isset($_POST["submit"])){
     include("connection.php");
-    $InventionsName=$_POST["inventionsname"];
-    $Descripation=$_POST["descripation"];
-    $Inventor=$_POST["inventor"];
-    $Image=$_POST["image"];
+    $InventionsName=mysqli_real_escape_string($Db,$_POST["inventionsname"]);
+    $Descripation=mysqli_real_escape_string($Db,$_POST["descripation"]);
+    $Inventor=mysqli_real_escape_string($Db,$_POST["inventor"]);
+    $Image=($_POST["image"]);
     $Image=$_FILES['image']['name'];
     $tmp_name=$_FILES['image']['tmp_name'];
     $Path="./images/".$Image;
     move_uploaded_file($tmp_name,$Path);
-$Inventionsdate=$_POST["inventionsdate"];
-$DiseaseId=$_POST["disease"];
+$Inventionsdate=mysqli_real_escape_string($Db,$_POST["inventionsdate"]);
+$DiseaseId=mysqli_real_escape_string($Db,$_POST["disease"]);
   
    $Query="INSERT INTO `medical_inventions`(`id`, `inventionsname`, `descripation`, `inventor`, `inventationsdate`, `image`,`diseaseid`) VALUES (NULL,'$InventionsName','$Descripation','$Inventor','$Inventionsdate','$Image','$DiseaseId')";
 

@@ -65,6 +65,7 @@ session_start();
                         <h6>Disease Name: <?php echo $data['diseasename']; ?></h6>
                       
                         <h6>Cure: <?php echo $data['cure']; ?></h6>
+                        <p>Prevention:<?php echo $data['preventation']; ?></p>
                     </div>
                     <button type="button" class="btn btn-primary mt-3" data-bs-toggle="modal" data-bs-target="#exampleModal<?php echo $data['id']; ?>">
                         View Detail
@@ -85,6 +86,7 @@ session_start();
                             <img src="./admin/images/<?php echo $data['image']; ?>" width="100%">
                             <p>Inventor: <?php echo $data['inventor']; ?></p>
                             <p><strong>Date: <?php echo $data['inventationsdate']; ?></strong></p>
+                            <p><strong>Descripation: <?php echo $data['preventation']; ?></strong></p>
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
