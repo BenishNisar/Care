@@ -101,25 +101,7 @@ $Data=mysqli_fetch_array($Result);
         
             <div class="col-sm-12">
               <label for="text" class="form-label">Inventions Name</label>
-
-              <select name="disease"  value="<?php echo $Data[1]; ?>" class="form-control" id="">
-<?php
-include("connection.php");
-                  $query="SELECT * FROM `diseases`";
-                  $reuslt=mysqli_query($Db,$query);
-                  if(mysqli_num_rows($reuslt)){
-                    while($row=mysqli_fetch_array($reuslt))
-                    {
-                   
-                ?>
-                <option value="<?php echo $row[0];?>"><?php echo $row[1];?></option>
-                <?php 
-                  }
-                }
-                ?>
-
-
-</select>
+              <input type="text" class="form-control"  name="inventionsname" id="inventor" placeholder="Enter a Text"  required>
 <div class="invalid-feedback">
                 Valid first name is required.
               </div>

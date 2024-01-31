@@ -97,7 +97,7 @@ table:hover{
 
                     <?php
 include("connection.php");
-$Query = "SELECT `medical_inventions.id`,`diseases.diseasename` , `medical_inventions.inventionsname`,`medical_inventions.descripation`, `medical_inventions.inventor`, `medical_inventions.inventationsdate`,`medical_inventions.image`,  `medical_inventions.diseaseid`  FROM `medical_inventions` INNER JOIN `diseases` ON `medical_inventions.diseaseid` = `diseases`.id;";
+$Query = "SELECT * FROM `medical_inventions`";
 
 
 $Response=mysqli_query($Db,$Query);
