@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -73,40 +74,29 @@
 
 
 
-
-   <div class="container">
+<div class="container">
    <div class="row">
       <div class="col-md-6 col-lg-6"style="margin-left:20px;" >
-
+<h2>Medical News</h2>
         <form action="#" method="POST" enctype="multipart/form-data" class="needs-validation" novalidate>
-        <h2>Medical Inventions Form</h2>
-        <div class="row g-3">
-      
-    
-
- 
-        <div class="col-sm-12 col-md-12">
-              <label for="" class="form-label">Inventions Name</label>
-              <input type="text" class="form-control"  name="inventionsname" id="inventor" placeholder="Enter a Text"  required>
+          <div class="row g-3">
+          <div class="col-sm-12 col-md-12 col-lg-12">
+              <label for="text" class="form-label">Days</label>
+              <input type="text" class="form-control" name="days" id="user" placeholder="Enter a headlines"  required>
               <div class="invalid-feedback">
                 Valid first name is required.
               </div>
             </div>
+ 
 
 
 
             <!-- button -->
-            <div class="col-sm-12 col-md-12 col-lg-12">
-<div class="form-group">
-<label class="text-dark" for="content">Descripation</label>
-<textarea name="descripation" style="height:250px" class="form-control" rows="5"></textarea>
     
-    </div>
-    </div>
 
             <div class="col-sm-12 col-md-12">
-              <label for="" class="form-label">Inventor</label>
-              <input type="text" class="form-control"  name="inventor" id="inventor" placeholder="Enter a Text"  required>
+              <label for="" class="form-label">Week</label>
+              <input type="text" class="form-control"  name="week" id="publicdate" placeholder="Enter a PublicDate"  required>
               <div class="invalid-feedback">
                 Valid first name is required.
               </div>
@@ -115,55 +105,24 @@
             
 
 
-          
-
-            <div class="col-md-12 mt-5">
-        <label for="" class="form-label">Image</label>
-<input type="file" class="form-control" name="image" id="">
-              <div class="invalid-feedback">
-                Please enter your shipping address.
-              </div>
-            </div>
-          
-
-            <div class="col-sm-12">
-              <label for="text" class="form-label">Inventions Date</label>
-              <input type="date" class="form-control" name="inventionsdate" id="source" placeholder="Enter a Text"  required>
+            <div class="col-sm-12 col-md-12">
+              <label for="" class="form-label">Month</label>
+              <input type="text" class="form-control"  name="month" id="publicdate" placeholder="Enter a PublicDate"  required>
               <div class="invalid-feedback">
                 Valid first name is required.
               </div>
             </div>
+          
+
+
 
           
 
            
 
   
-            <label for="text" class="form-label">Inventions Name</label>
+  
 
-<select name="disease"class="form-control" id="">
-<?php
-include("connection.php");
-    $query="SELECT * FROM `diseases`";
-    $reuslt=mysqli_query($Db,$query);
-    if(mysqli_num_rows($reuslt)){
-      while($row=mysqli_fetch_array($reuslt))
-      {
-     
-  ?>
-  <option value="<?php echo $row[0];?>"><?php echo $row[1];?></option>
-  <?php 
-    }
-  }
-  ?>
-
-
-</select>
-
-<div class="invalid-feedback">
-  Valid first name is required.
-</div>
-</div>
 
 
 
@@ -180,16 +139,14 @@ include("connection.php");
 
           
 
-          <button class=" btn btn-primary text-light  float-right col-sm-4" style="margin-bottom:10px;" name="submit" type="submit">Submit</button>
+          <button class=" btn btn-primary text-light  float-right col-sm-4" name="submit" type="submit">Submit</button>
         </form>
       </div>
     </div>
-
-      </div>
-<!-- row -->
 </div>
-<!-- container -->
-
+ <!-- row -->
+</div>
+    <!-- container -->
   </main>
 
 
@@ -214,10 +171,9 @@ include("connection.php");
 include_once("footer.php");
 ?>
 
+
+
   
-
-
-
 
   <!-- plugins:js -->
   <script src="vendors/js/vendor.bundle.base.js"></script>
@@ -250,23 +206,19 @@ include_once("footer.php");
 <?php
 if(isset($_POST["submit"])){
     include("connection.php");
-    $InventionsName=$_POST["inventionsname"];
-    $Descripation=$_POST["descripation"];
-    $Inventor=$_POST["inventor"];
-    $Image=$_POST["image"];
-    $Image=$_FILES['image']['name'];
-    $tmp_name=$_FILES['image']['tmp_name'];
-    $Path="./images/".$Image;
-    move_uploaded_file($tmp_name,$Path);
-$Inventionsdate=$_POST["inventionsdate"];
-$DiseaseId=$_POST["disease"];
+    $Days=$_POST["days"];
+    $Week=$_POST["week"];
+    $Month=$_POST["month"];
+ 
+
   
-   $Query="INSERT INTO `medical_inventions`(`id`, `inventionsname`, `descripation`, `inventor`, `inventationsdate`, `image`,`diseaseid`) VALUES (NULL,'$InventionsName','$Descripation','$Inventor','$Inventionsdate','$Image','$DiseaseId')";
+  
+   $Query="INSERT INTO `openinghours`(`id`, `day`, `week`, `month`) VALUES (NULL,'$Days','$Week','$Month')";
 
 
 mysqli_query($Db,$Query);
 
-echo "<script>window.location.href='medicalinventionsfetch.php';</script>";
+echo "<script>window.location.href='openinghoursfetch.php';</script>";
 
 
 }

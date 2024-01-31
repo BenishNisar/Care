@@ -43,7 +43,6 @@
 
 
 
-
   table{
  
  box-shadow:3px 3px 1px 1px black;
@@ -52,9 +51,6 @@
 table:hover{
  box-shadow:3px 3px 1px 1px blue;
 }
-
-
-
 
 </style>
 
@@ -73,36 +69,32 @@ table:hover{
                        
  <div class="container py-5">
   <header class="text-center text-dark">
-    <h1 class="display-4">Doctor Account</h1>
-    <p class="lead mb-0"  id="changingText"><b>"Embrace each day as an opportunity to nourish your body, challenge your mind, and cultivate a life filled with balance, for in the pursuit of a healthy life, you discover the true richness of well-being."</b></p>
+  <img id="mainImage"  alt="Main Image" style="max-width:300px;height:200px;border: radius 7px;">
+
+
    
   </header>
-  <div style="float:right;" class="">
- <a style="text-decoration:none;color:white;" href="doctoraccountform.php"> <button class="btn btn-primary" style="width:150px;color:white;background-color:blue;border-top:1px solid white;border-right:1px solid white;border-bottom:1px solid white;border-left:1px solid white;border-radius:3px;text-decoration:none;margin-right:1px;border-radius:10px;">Add New</button></a>
+  <div style="float:right;">
+ <a style="text-decoration:none;color:white;" href="openinghoursform.php"> <button class="btn btn-primary" style="width:150px;color:white;background-color:blue;border-top:1px solid white;border-right:1px solid white;border-bottom:1px solid white;border-left:1px solid white;border-radius:3px;text-decoration:none;margin-right:1px;border-radius:10px;">Add New</button></a>
   </div>
-  <div class="col-sm-6 col-md-12 col-lg-12">
+  <div class="col-sm-12 col-md-12 col-lg-12">
    <table border="1px"   style="width:100%;" class="mt-5 text-white text-center">
             <tr class="text-white" style="border-right:1px solid black;">
-                        <th> Id</th>
-                        <th>Doctor Name</th>
-                        <th>Doctor Profile</th>
-                        <th>First Name</th>
-                      <th>Last Name</th>
-                        <th>Specialty</th>
-                        <th>Image</th>
-                        <th>Email</th>
-                        <th>Password</th>
-                        <th>Phone Number</th>
-                        <th>Address</th>
-                        <th>Edit</th>
-<th>Delete</th>
+                        <th >id</th>
+                        <th>Day</th>
+                        <th>Week</th>
+                        <th>Month</th>
+           
+                      <th>Delete</th>
                    
                     </tr>
 
 
                     <?php
 include("connection.php");
-$Query="SELECT * FROM `doctoraccount`";
+$Query = "SELECT * FROM `openinghours`";
+
+
 $Response=mysqli_query($Db,$Query);
 if(mysqli_num_rows($Response)){
     while($Data=mysqli_fetch_array($Response)){
@@ -112,18 +104,9 @@ if(mysqli_num_rows($Response)){
 <tr class="text-dark">
     <td><?php echo $Data[0]; ?></td>
     <td><?php echo $Data[1]; ?></td>
-    <td><img src="./images/<?php echo $Data[2];?>"  width="100px" ></td>
-  
+    <td><?php echo $Data[2]; ?></td>
     <td><?php echo $Data[3]; ?></td>
-    <td><?php echo $Data[4]; ?></td>
-    <td><?php echo $Data[5]; ?></td>
-    <td><img src="./images/<?php echo $Data[6];?>"  width="100px" height="80px"></td>
-    <td><?php echo $Data[7]; ?></td>
-    <td><?php echo $Data[8]; ?></td>
-    <td><?php echo $Data[9]; ?></td>
-    <td><?php echo $Data[10]; ?></td>
-    <td><a href="doctoraccountedit.php?id=<?php echo $Data[0]; ?>"><button class="btn btn-primary">Edit</button></a></td>
-    <td><a href="doctoraccountdelete.php?id=<?php echo $Data[0]; ?>"><button class="btn btn-primary">Delete</button></a></td>
+  <td><a href="medicalinventionsdelete.php?id=<?php echo $Data[0]; ?>"><button class="btn btn-primary">Delete</button></a></td>
    
 </tr>
 <?php
@@ -196,16 +179,29 @@ if(mysqli_num_rows($Response)){
 <?php
 include_once("footer.php");
 ?>
- <script>
-    document.addEventListener('DOMContentLoaded', function () {
-      var changingText = document.getElementById('changingText');
+   <script>
+        var images = ["./images/medicalinventions.jpg", "./images/medicalinventionstwo.jpg", "./images/medicalinventionsthree.jpg"]; // Array of image sources
+        var imageIndex = 0; 
 
-      setInterval(function () {
-        changingText.innerHTML =  "Certainly! Here's a sample appointment quote you can use:Your health is an investment, not an expense. Schedule your appointment today and prioritize the well-being that empowers your tomorrows. Your journey to a healthier life.";
-      }, 5000);
-    
-    });
-  </script>
+        // Function to change the image
+        function changeImage() {
+            var image = document.getElementById("mainImage");
+            image.src = images[imageIndex];
+            image.style.width = "300px";
+            image.style.height = "200px";
+            image.style.borderRadius="8px";
+            
+            imageIndex = (imageIndex + 1) % images.length; // Cycle through images
+        }
+
+        // Change image every 3 seconds (3000 milliseconds)
+        setInterval(changeImage, 3000);
+
+        // Initially set the image
+        changeImage();
+
+
+    </script>
 
 
   <!-- plugins:js -->

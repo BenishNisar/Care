@@ -59,15 +59,15 @@ session_start();
             ?>
             
             <div class="col-lg-4 col-md-6 col-12">
-                <div class="card mb-4">
-                    <img src="./admin/images/<?php echo $data['image']; ?>" alt="">
+                <div class="card mb-4"  >
+                    <img src="./admin/images/<?php echo $data['image']; ?>" width="100%" >
                     <div style="margin-left: 10px;">
                         <h6>Disease Name: <?php echo $data['diseasename']; ?></h6>
-                        <p><?php echo $data['descripation']; ?></p>
+                      
                         <h6>Cure: <?php echo $data['cure']; ?></h6>
                     </div>
-                    <button type="button" class="btn btn-primary col-6" data-bs-toggle="modal" data-bs-target="#exampleModal<?php echo $data['id']; ?>">
-                        Learn More
+                    <button type="button" class="btn btn-primary mt-3" data-bs-toggle="modal" data-bs-target="#exampleModal<?php echo $data['id']; ?>">
+                        View Detail
                     </button>
                 </div>
             </div>
@@ -82,7 +82,7 @@ session_start();
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div class="modal-body">
-                            <h1><?php echo $data['inventionsname']; ?></h1>
+                            <img src="./admin/images/<?php echo $data['image']; ?>" width="100%">
                             <p>Inventor: <?php echo $data['inventor']; ?></p>
                             <p><strong>Date: <?php echo $data['inventationsdate']; ?></strong></p>
                         </div>

@@ -101,7 +101,7 @@ $Data=mysqli_fetch_array($Result);
         
             <div class="col-sm-12">
               <label for="text" class="form-label">Inventions Name</label>
-              <input type="text" class="form-control"  name="inventionsname" id="inventor" placeholder="Enter a Text"  required>
+              <input type="text" class="form-control"  name="inventionsname"value="<?php echo $Data[1]; ?>"  id="inventor" placeholder="Enter a Text"  required>
 <div class="invalid-feedback">
                 Valid first name is required.
               </div>
@@ -135,7 +135,7 @@ $Data=mysqli_fetch_array($Result);
 
             <div class="col-md-12 mt-5">
         <label for="" class="form-label">Image</label>
-<input type="file" name="image"  value="<?php echo $Data[4]; ?>" id="">
+<input type="file" name="image" class="form-control"  value="<?php echo $Data[4]; ?>" id="">
               <div class="invalid-feedback">
                 Please enter your shipping address.
               </div>

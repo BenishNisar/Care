@@ -325,6 +325,13 @@
             </a>
           </li>
 
+          <li class="nav-item">
+            <a class="nav-link" href="openinghoursfetch.php">
+             
+              <span class="menu-title">Opening Hours</span>
+            </a>
+          </li>
+
           
       </ul>
       </nav>

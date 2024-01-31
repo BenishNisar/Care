@@ -102,8 +102,7 @@ color:blue;
 
             <div class="col-sm-6 col-md-12 mt-5">
         <label for="" class="form-label">Image</label>
-<input type="file"
-class="form-control" name="image" id="">
+<input type="file" class="form-control" name="image" id="">
               <div class="invalid-feedback">
                 Please enter your shipping address.
               </div>
@@ -222,7 +221,7 @@ if(isset($_POST["submit"])){
 
   
   
-   $Query="INSERT INTO `diseases`(`id`, `diseasename`, `descripation`, `preventation`, `cure`, `image`) VALUES (NULL,'$DiseasesName','$Descripation','$Preventation','$Cure','$Image')";
+    $Query="INSERT INTO `diseases`(`id`, `diseasename`, `descripation`, `preventation`, `cure`, `image`) VALUES (NULL,'$DiseasesName','$Descripation','$Preventation','$Cure','$Image')";
 
 
 mysqli_query($Db,$Query);
