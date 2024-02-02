@@ -97,7 +97,7 @@ color:blue;
 
             <div class="col-sm-12 col-md-12 col-lg-12">
               <label for="citiesname" class="form-label">Days Availability</label>
-              <input type="text" class="form-control" name="daysavailability" id="user" placeholder="Enter a City Name"  required>
+              <input type="text" class="form-control" name="daysavailability" id="user" placeholder="Enter a Days Name"  required>
               <div class="invalid-feedback">
                 Valid first name is required.
               </div>
@@ -109,7 +109,7 @@ color:blue;
 
             <div class="col-sm-12 col-md-12 col-lg-12">
               <label for="citiesname" class="form-label">Week Availability</label>
-              <input type="text" class="form-control" name="weekavailability" id="user" placeholder="Enter a City Name"  required>
+              <input type="text" class="form-control" name="weekavailability" id="user" placeholder="Enter a Week Name"  required>
               <div class="invalid-feedback">
                 Valid first name is required.
               </div>
@@ -117,7 +117,7 @@ color:blue;
          
             <div class="col-sm-12 col-md-12 col-lg-12">
               <label for="citiesname" class="form-label">Month Availability</label>
-              <input type="text" class="form-control" name="monthavailability" id="user" placeholder="Enter a City Name"  required>
+              <input type="text" class="form-control" name="monthavailability" id="user" placeholder="Enter a Month Name"  required>
               <div class="invalid-feedback">
                 Valid first name is required.
               </div>

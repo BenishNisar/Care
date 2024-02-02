@@ -258,8 +258,8 @@ if(isset($_POST["submit"])){
     $tmp_name=$_FILES['image']['tmp_name'];
     $Path="./images/".$Image;
     move_uploaded_file($tmp_name,$Path);
-$Inventionsdate=mysqli_real_escape_string($Db,$_POST["inventionsdate"]);
-$DiseaseId=mysqli_real_escape_string($Db,$_POST["disease"]);
+$Inventionsdate=$_POST["inventionsdate"];
+$DiseaseId=$_POST["disease"];
   
    $Query="INSERT INTO `medical_inventions`(`id`, `inventionsname`, `descripation`, `inventor`, `inventationsdate`, `image`,`diseaseid`) VALUES (NULL,'$InventionsName','$Descripation','$Inventor','$Inventionsdate','$Image','$DiseaseId')";
 

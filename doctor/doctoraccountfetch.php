@@ -78,7 +78,7 @@ if(mysqli_num_rows($Response)){
 
 
 <div class="profile">
-  <img src="./images/<?php echo $Data[2];?>"  width="350px" height="390px"; style="border-radius:50%;margin-left:280px;margin-top:5px;">
+  <img src="./images/<?php echo $Data[2];?>"  width="420px" height="390px"; style="border-radius:50%;margin-left:280px;margin-top:5px;">
   </div>
 
 
