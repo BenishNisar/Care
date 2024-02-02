@@ -45,43 +45,7 @@ session_start();
 
 
 	
-		
-<!-- Start Blog Area -->
-<section>
-    <div class="container" >
-        <div class="row">
-        <?php
-                $Db=mysqli_connect("localhost","root","","care");
-                $Query="SELECT * FROM `doctoraccount`";
-                $Response=mysqli_query($Db,$Query);
-                if(mysqli_num_rows($Response)){
-                    while($Data=mysqli_fetch_array($Response)){
 
-                ?>
-            <!-- Single Blog -->
-            <div class="col-lg-4 col-md-4">
-                <a href="bookappointment.php">
-              
-                <div class="card mb-4">
-                    <img src="./admin/images/<?php echo $Data[2]; ?>" class="card-img-top" width="200px" height="300px">
-                    <div class="card-body">
-                        <div class="date"><span class="text-dark">Doctor Name:</span><?php echo $Data[1]; ?></div>
-                       <span class="text-dark card-title">Specialist:</span><?php echo $Data[5]; ?>
-                    </div>
-                    </a>
-                </div>
-               
-            </div>
-            <!-- End Single Blog -->
-            <?php
-                    }
-                }
-                ?>
-        </div>
-       
-    </div>
-</section>
-<!-- End Blog Area -->
 
 <script>
     
@@ -156,7 +120,9 @@ if(name4=='a'){
 
 
 
-
+<?php
+echo "<script>window.location.href='bookappointment.php';</script>";
+?>
 
 
 

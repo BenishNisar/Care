@@ -23,7 +23,7 @@
   <!-- inject:css -->
   <link rel="stylesheet" href="css/vertical-layout-light/style.css">
   <!-- endinject -->
-  <link rel="shortcut icon" href="images/favicon.png" />
+  <link rel="shortcut icon" href="images/faviconlg.png"/>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
 
@@ -93,7 +93,7 @@ table:hover{
 
                     <?php
 include("connection.php");
-$Query="SELECT availability.avaliabilityid, doctoraccount.username, availability.dayavailability, availability.weekavailability,availability.monthavalibility FROM availability INNER JOIN doctoraccount ON availability.doctorid = doctoraccount.id;";
+$Query="SELECT availability.avaliabilityid, doctoraccount.username, availability.dayavailability, availability.weekavailability,availability.monthavalibility,doctoraccount.specialty FROM availability INNER JOIN doctoraccount ON availability.doctorid = doctoraccount.id;";
 $Response=mysqli_query($Db,$Query);
 if(mysqli_num_rows($Response)){
     while($DataRes=mysqli_fetch_array($Response)){

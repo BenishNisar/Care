@@ -8,62 +8,91 @@ session_start();
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Care</title>
     <?php
 
 include_once("headerstyle.php");
+include_once("doctortablestyle.php");
 ?>
 </head>
 <body>
+<?php  include_once("headerfront.php"); 
+ 
+?>
 
 
-
-
- <?php  include_once("headerfront.php"); ?>
 
 <div class="container">
-<div class="row">
+      <div class="header_wrap">
+        <div class="num_rows">
+		
+				<div class="form-group"> 	<!--		Show Numbers Of Rows 		-->
+			 		<select class  ="form-control" name="state" id="maxRows">
+						 
+						 
+						 <option value="10">10</option>
+						 <option value="15">15</option>
+						 <option value="20">20</option>
+						 <option value="50">50</option>
+						 <option value="70">70</option>
+						 <option value="100">100</option>
+            <option value="5000">Show ALL Rows</option>
+						</select>
+			 		
+			  	</div>
+        </div>
+        <div class="tb_search">
+<input type="text" id="search_input_all" onkeyup="FilterkeyWord_all_table()" placeholder="Search.." class="form-control">
+        </div>
+      </div>
+<table class="table table-striped table-class" id= "table-id">
+  
+<thead>
+<tr>
+                       
 
-<div class="col-sm-12 col-md-12 col-lg-12">
 
-   <table border="1px"   style="width:100%;background-color:rgb(26, 118, 209);color:white;" class="mt-5 text-white text-center table">
-            <tr class="text-light" style="border-right:1px solid black;">
-                        <th >Doctor</th>
-                        <th>Specialty</th>
-                        <th>Availability</th>
-                    
                         
-                     
-                   
-                    </tr>
+                        <th>Specialist Name</th>
+                        <th>Specialty</th>
+                        <th>City</th>
+						            <th>Book Appointment</th>
+                        
+                        
+
+	</tr>
+  </thead>
 
 
+ 
+ 
 
-
+<tbody>
+	
 <?php
-$Db=mysqli_connect("localhost","root","","care");
-$Query="SELECT availability.avaliabilityid, doctoraccount.username,doctoraccount.specialty, availability.dayavailability, availability.weekavailability,availability.monthavalibility FROM availability INNER JOIN doctoraccount ON availability.doctorid = doctoraccount.id;";
-$Response=mysqli_query($Db,$Query);
-if(mysqli_num_rows($Response)){
-    while($Data=mysqli_fetch_array($Response)){
-
- ?>
-
-
-
-
+ $Db=mysqli_connect("localhost","root","","care");
+ $Query="SELECT availability.avaliabilityid, doctoraccount.username, availability.dayavailability, availability.weekavailability,availability.monthavalibility,doctoraccount.specialty,doctoraccount.city FROM availability INNER JOIN doctoraccount ON availability.doctorid = doctoraccount.id;";
+ $Response=mysqli_query($Db,$Query);
+ if(mysqli_num_rows($Response)){
+     while($Data=mysqli_fetch_array($Response)){
+ 
+  ?>
+	
 <tr class="text-dark">
+    <td><?php echo $Data[1]; ?></td>
+    <td><?php echo $Data[5]; ?></td>
+    <td><?php echo $Data[6]; ?></td>
+	
+	<td><a href="bookappointment.php?id=<?php echo $Data[0]; ?>"><button class="btn btn-primary">Book Appointment</button></a></td>
   
-    <td class="text-light"><?php echo $Data[1]; ?></td>
     
-    
-
   
-    <td class="text-light"><?php echo $Data[2];?></td>
+ 
+  
 
-    <td class="text-light"><?php echo $Data[3]; ?></td>
+    
+   
 </tr>
-
 <?php
 }
 }
@@ -75,9 +104,29 @@ if(mysqli_num_rows($Response)){
 
 
 
-                 
-            </table>
-          </div>
+
+
+
+
+  
+    <tbody>
+</table>
+
+<!--		Start Pagination -->
+			<div class='pagination-container'>
+				<nav>
+				  <ul class="pagination">
+				   <!--	Here the JS Function Will Add the Rows -->
+				  </ul>
+				</nav>
+			</div>
+      <div class="rows_count">Showing 11 to 20 of 91 entries</div>
+
+</div> <!-- 		End of Container -->
+
+
+
+<!--  Developed By Yasser Mas -->
         
    
 
@@ -127,7 +176,10 @@ if(mysqli_num_rows($Response)){
 
 
   <!-- container-scroller -->
-  
+  <?php
+include_once("footerfront.php");
+include_once("doctorstylescript.php");
+?>
 
 <!-- footer -->
 

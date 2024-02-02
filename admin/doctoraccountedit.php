@@ -32,7 +32,7 @@ $Id=$_GET["id"];
   <!-- inject:css -->
   <link rel="stylesheet" href="css/vertical-layout-light/style.css">
   <!-- endinject -->
-  <link rel="shortcut icon" href="images/favicon.png" />
+  <link rel="shortcut icon" href="images/faviconlg.png" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
 
@@ -167,6 +167,33 @@ $Data=mysqli_fetch_array($Result);
               </div>
             </div>
 
+            <div class="col-sm-6 col-md-6 col-lg-6">
+              <label for="text" class="form-label">City</label>
+              <!-- <input type="text" class="form-control" name="text"  id="text" placeholder="Enter  "  required> -->
+              
+              <Select class="form-control" name="city"  value="<?php echo $Data[11]; ?>">
+              <?php
+                
+                $query="SELECT * FROM `cities`";
+                $reuslt=mysqli_query($Db,$query);
+                if(mysqli_num_rows($reuslt)){
+                  while($row=mysqli_fetch_array($reuslt))
+                  {
+                 
+              ?>
+              <option value="<?php echo $row[1];?>"><?php echo $row[1];?></option>
+              <?php 
+                }
+              }
+              ?>
+
+              </Select>
+              
+              
+              <div class="invalid-feedback">
+                Valid first name is required.
+              </div>
+            </div>
 
   
 
@@ -289,8 +316,9 @@ if (isset($_POST["submit"])) {
     $Password = $_POST['password'];
     $PhoneNumber = $_POST['phonenumber'];
     $Address = $_POST["address"];
+    $City=$_POST["city"];
 
-    $Update ="UPDATE `doctoraccount` SET `username`='$DoctorName',`doctorprofile`='$DoctorProfile',`firstname`='$FirstName',`lastname`='$LastName',`specialty`='$Specialty',`image`='$Image',`email`='$Email',`password`='$Password',`phonenumber`='$PhoneNumber',`address`='$Address' WHERE `id`='$Id'";
+    $Update ="UPDATE `doctoraccount` SET `username`='$DoctorName',`doctorprofile`='$DoctorProfile',`firstname`='$FirstName',`lastname`='$LastName',`specialty`='$Specialty',`image`='$Image',`email`='$Email',`password`='$Password',`phonenumber`='$PhoneNumber',`address`='$Address',`city`='$City' WHERE `id`='$Id'";
 
     mysqli_query($Db, $Update);
 

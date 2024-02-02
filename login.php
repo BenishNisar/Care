@@ -11,7 +11,8 @@ if($_SESSION["username"] == ""){
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-<title>detail</title>
+<title>Care</title>
+<link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
 </head>
 <style>
 /* Importing fonts from Google */
@@ -101,6 +102,9 @@ body {
 .wrapper .btn:hover {
     background-color: #039BE5;
 }
+.btn {
+  cursor: pointer; 
+}
 
 .wrapper a {
     text-decoration: none;
@@ -118,6 +122,7 @@ body {
         padding: 40px 15px 15px 15px;
     }
 }
+
 </style>
 <body class="container display-4">
 

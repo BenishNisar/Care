@@ -61,8 +61,11 @@ session_start();
 					<div class="row"> 
 						<div class="col-lg-6">
 							<div class="contact-us-left">
-								<!--Start Google-map -->
-								<div id="myMap"></div>
+							
+								<div id="myMap">
+
+								<iframe src="https://www.google.com/maps/embed?pb=!1m26!1m12!1m3!1d57925.64359613108!2d66.99468720030097!3d24.851799901079584!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m11!3e6!4m3!3m2!1d24.8431249!2d67.0621091!4m5!1s0x3eb33e1aa2f228a5%3A0x156e18a225edddbc!2sDr.%20Ruth%20K.%20M.%20Pfau%2C%20Civil%20Hospital%20Karachi%2C%20Mission%20Rd%2C%20near%20Civil%20Hospital%20Masjid%D8%8C%20Nanakwara%2C%20Karachi%2C%20Karachi%20City%2C%20Sindh!3m2!1d24.8589392!2d67.0101439!5e0!3m2!1sen!2s!4v1706797660549!5m2!1sen!2s" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+								</div>
 								<!--/End Google-map -->
 							</div>
 						</div>
@@ -98,7 +101,7 @@ session_start();
 												<textarea name="message" placeholder="Your Message" required=""></textarea>
 											</div>
 										</div>
-										<div class="col-12">
+										<div class="col-6">
 											<div class="form-group login-btn">
 												<button class="btn" name="submit" type="submit">Send</button>
 											</div>

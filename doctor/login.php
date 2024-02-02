@@ -12,8 +12,10 @@ if($_SESSION["doctorname"] == ""){
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-<title>detail</title>
+<title>Care</title>
+
 </head>
+<link rel="shortcut icon" href="images/faviconlg.png" type="image/x-icon">
 <style>
 /* Importing fonts from Google */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
@@ -102,7 +104,9 @@ body {
 .wrapper .btn:hover {
     background-color: #039BE5;
 }
-
+.btn {
+  cursor: pointer; 
+}
 .wrapper a {
     text-decoration: none;
     font-size: 0.8rem;

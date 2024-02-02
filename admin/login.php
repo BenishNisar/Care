@@ -101,7 +101,9 @@ body {
 .wrapper .btn:hover {
     background-color: #039BE5;
 }
-
+.btn {
+  cursor: pointer; 
+}
 .wrapper a {
     text-decoration: none;
     font-size: 0.8rem;

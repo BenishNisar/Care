@@ -69,11 +69,7 @@ if(mysqli_num_rows($Response)){
 											</li>
 											<li><a href="doctortimetable.php">Doctors </a></li>
 											<li><a href="services.php">Services </a></li>
-											<li><a href="#">Pages <i class="icofont-rounded-down"></i></a>
-												<ul class="dropdown">
-													<li><a href="404.html">404 Error</a></li>
-												</ul>
-											</li>
+											
 											<li><a href="news.php">News<i class="icofont-rounded-down"></i></a>
 												
 											</li>

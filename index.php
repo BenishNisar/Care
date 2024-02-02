@@ -756,14 +756,39 @@ if(mysqli_num_rows($Response)){
 						<!-- End Newsletter Form -->
 					</div>
 					<div class="col-lg-6  col-12">
+	
+
 						<!-- Start Newsletter Form -->
 						<div class="subscribe-form ">
-							<form action="mail/mail.php" method="get" target="_blank" class="newsletter-inner">
-								<input name="EMAIL" placeholder="Your email address" class="common-input" onfocus="this.placeholder = ''"
+					<form action="#" method="POST" target="_blank" class="newsletter-inner">
+								<input name="email"  placeholder="Your email address" class="common-input" onfocus="this.placeholder = ''"
 									onblur="this.placeholder = 'Your email address'" required="" type="email">
-								<button class="btn">Subscribe</button>
+								<button class="btn" name="submit">Subscribe</button>
 							</form>
+							<?php
+if(isset($_POST["submit"])){
+	$Db = mysqli_connect("localhost", "root", "", "care");
+    $Email=$_POST["email"];
+    
+ 
+
+  
+  
+   $Query="INSERT INTO `newsletter`(`id`, `email`) VALUES (NULL,'$Email')";
+
+
+mysqli_query($Db,$Query);
+
+
+}
+
+
+?>
+
+
 						</div>
+
+		
 						<!-- End Newsletter Form -->
 					</div>
 				</div>

@@ -212,12 +212,12 @@
           <li class="nav-item">
             <a class="nav-link" href="checkappointement.php">
            
-              <span class="menu-title" >Check Appointement</span>
+              <span class="menu-title">Check Appointement</span>
             </a>
           </li>
         
           <li class="nav-item">
-            <a class="nav-link" href="">
+            <a class="nav-link" href="doctoraccountfetch.php">
             
               <span class="menu-title">Profile</span>
             </a>

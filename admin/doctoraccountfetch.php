@@ -23,7 +23,7 @@
   <!-- inject:css -->
   <link rel="stylesheet" href="css/vertical-layout-light/style.css">
   <!-- endinject -->
-  <link rel="shortcut icon" href="images/favicon.png" />
+  <link rel="shortcut icon" href="images/faviconlg.png" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
 
@@ -94,8 +94,9 @@ table:hover{
                         <th>Password</th>
                         <th>Phone Number</th>
                         <th>Address</th>
+                        <th>City</th>
                         <th>Edit</th>
-<th>Delete</th>
+                         <th>Delete</th>
                    
                     </tr>
 
@@ -122,6 +123,8 @@ if(mysqli_num_rows($Response)){
     <td><?php echo $Data[8]; ?></td>
     <td><?php echo $Data[9]; ?></td>
     <td><?php echo $Data[10]; ?></td>
+    <td><?php echo $Data[11]; ?></td>
+    
     <td><a href="doctoraccountedit.php?id=<?php echo $Data[0]; ?>"><button class="btn btn-primary">Edit</button></a></td>
     <td><a href="doctoraccountdelete.php?id=<?php echo $Data[0]; ?>"><button class="btn btn-primary">Delete</button></a></td>
    

@@ -66,16 +66,27 @@ session_start();
     <div class="about-section">
         <div class="container">
             <div class="row">
+            <?php
+
+
+$Db = mysqli_connect("localhost", "root", "", "care");
+$Query="SELECT * FROM `about`";
+$Response=mysqli_query($Db,$Query);
+if(mysqli_num_rows($Response)){
+    while($Data=mysqli_fetch_array($Response)){
+
+ ?>
                 <div class="col-md-12">
-                    <h3>Our Story</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi.</p>
-                    <p>Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed augue semper porta.</p>
+                    <h3><?php echo $Data[1]; ?></h3>
+                    <p><?php  echo $Data[2];  ?></p>
+        
                 </div>
-                <div class="col-md-12">
-                    <h3>Our Mission</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam.</p>
-                    <p>Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed augue semper porta.</p>
-                </div>
+
+
+             <?php
+    }}
+             ?>   
+               
             </div>
         </div>
     </div>
