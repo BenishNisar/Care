@@ -226,7 +226,7 @@ if(mysqli_num_rows($Response)){
  ?>
 						<div class="single-features">
 							<div class="signle-icon">
-								<i class="icofont <?php echo $Data[4]; ?>"></i>
+								<i class="icofont icofont-ambulance-cross"></i>
 							</div>
 							<h3><?php echo $Data[1]; ?></h3>
 							<p><?php echo $Data[2];  ?></p>
@@ -239,16 +239,40 @@ if(mysqli_num_rows($Response)){
 					</div>
 					<div class="col-lg-4 col-12">
 						<!-- Start Single features -->
+
+						<?php
+ $Db = mysqli_connect("localhost", "root", "", "care");
+$Query="SELECT * FROM `service` WHERE `id` = 12";
+$Response=mysqli_query($Db,$Query);
+if(mysqli_num_rows($Response)){
+    while($Data=mysqli_fetch_array($Response)){
+
+ ?>
 						<div class="single-features">
 							<div class="signle-icon">
 								<i class="icofont icofont-medical-sign-alt"></i>
 							</div>
-							<h3>Enriched Pharmecy</h3>
-							<p>Lorem ipsum sit, consectetur adipiscing elit. Maecenas mi quam vulputate.</p>
+							<h3><?php echo $Data[1]; ?></h3>
+							<p><?php echo $Data[2]; ?></p>
+						<?php
+						
+	}}
+						?>
+						
 						</div>
 						<!-- End Single features -->
 					</div>
 					<div class="col-lg-4 col-12">
+
+					<?php
+ $Db = mysqli_connect("localhost", "root", "", "care");
+$Query="SELECT * FROM `service` WHERE `id` = 12";
+$Response=mysqli_query($Db,$Query);
+if(mysqli_num_rows($Response)){
+    while($Data=mysqli_fetch_array($Response)){
+
+ ?>
+		
 						<!-- Start Single features -->
 						<div class="single-features last">
 							<div class="signle-icon">
@@ -256,6 +280,10 @@ if(mysqli_num_rows($Response)){
 							</div>
 							<h3>Medical Treatment</h3>
 							<p>Lorem ipsum sit, consectetur adipiscing elit. Maecenas mi quam vulputate.</p>
+					
+					<?php
+	}}
+					?>
 						</div>
 						<!-- End Single features -->
 					</div>

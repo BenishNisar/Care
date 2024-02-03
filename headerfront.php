@@ -74,13 +74,16 @@ if(mysqli_num_rows($Response)){
 												
 											</li>
 											<li><a href="contact.php">Contact Us</a></li>
+											<li><a href="logoutfront.php" ><button class="btn" style="margin-top:-20px;margin-left:30px;">LogOut</button></a></li>
+
 										</ul>
+										
 									</nav>
 								</div>
 								<!--/ End Main Menu -->
 							</div>
-							<div class="col-lg-2 col-12">
-
+							<div class="col-lg-2 col-12" >
+							
 							<?php
 
 $Db=mysqli_connect("localhost","root","","care");
@@ -96,8 +99,12 @@ if(isset($_SESSION['username'])) {
 }
 ?>
 
+
+
 								
 							</div>
+
+
 						</div>
 					</div>
 				</div>

@@ -126,16 +126,7 @@ $Data=mysqli_fetch_array($Result);
           
           
           
-            <div class="col-sm-12 col-md-12">
-              <label for="" class="form-label">Font Awesome</label>
-             
-              <textarea name="fontawesome" class="form-control" value="<?php echo $Data[4] ?>" rows="10"></textarea>
-              <div class="invalid-feedback">
-                Valid first name is required.
-              </div>
-            </div>
-
-  
+       
   
 
 
@@ -230,9 +221,9 @@ if(isset($_POST["submit"])){
  $Path="./images/".$Image;
  move_uploaded_file($Tmp_name, $Path);
 
- $FontAwesome=mysqli_real_escape_string($Db,$_POST["fontawesome"]);
+ 
 $Update="UPDATE `service` SET 
-   `title`='$Title',`descripation`='$Description',`image`='$Image',`fontawesome`=' $FontAwesome'   WHERE `id`=$Id";
+   `title`='$Title',`descripation`='$Description',`image`='$Image'   WHERE `id`=$Id";
 
 
 mysqli_query($Db,$Update);

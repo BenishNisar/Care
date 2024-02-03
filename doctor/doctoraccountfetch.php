@@ -78,8 +78,19 @@ if(mysqli_num_rows($Response)){
 
 
 <div class="profile">
-  <img src="./images/<?php echo $Data[2];?>"  width="420px" height="390px"; style="border-radius:50%;margin-left:280px;margin-top:5px;">
-  </div>
+  
+  <img src="./images/<?php echo $Data[2];?>"  width="420px" height="390px"; style="border-radius:50%;margin-left:250px;margin-top:5px;">
+  
+</div>
+<div style="margin-top:80px;margin-left:20px;border-style:double;height:250px;color:blue;">
+
+<h2 class="mt-3">Name:<?php echo $Data[1];?></h2>
+  <h2>Specialty:<?php echo $Data[5];?></h2>
+  <h2>Email:<?php echo $Data[7];?></h2>
+  <h2>Password:<?php echo $Data[8];?></h2>
+  <h2>Phone Number:<?php echo $Data[9];?></h2>
+  <h2>Address:<?php echo $Data[10];?></h2>
+</div>
 
 
 <?php
