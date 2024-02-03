@@ -55,6 +55,7 @@ include_once("doctortablestyle.php");
                         
                         <th>Specialist Name</th>
                         <th>Specialty</th>
+                        <th>Days</th>
                         <th>City</th>
 						            <th>Book Appointment</th>
                         
@@ -80,7 +81,9 @@ include_once("doctortablestyle.php");
 	
 <tr class="text-dark">
     <td><?php echo $Data[1]; ?></td>
+   
     <td><?php echo $Data[5]; ?></td>
+    <td><?php echo $Data[2]; ?></td>
     <td><?php echo $Data[6]; ?></td>
 	
 	<td><a href="bookappointment.php?id=<?php echo $Data[0]; ?>"><button class="btn btn-primary">Book Appointment</button></a></td>

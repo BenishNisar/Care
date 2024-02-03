@@ -116,12 +116,9 @@ table:hover{
             <tr class="text-white" style="border-right:1px solid black;">
                         <th >id</th>
                         <th>title</th>
-                      
                         <th>Description</th>
-                        
-             
-                  <th>Image</th>
-             
+                         <th>Image</th>
+                         <th>Font Awesome</th>
                   
 
                       <th>Edit</th>
@@ -147,8 +144,7 @@ if(mysqli_num_rows($Response)){
     
 <td><img src="./images/<?php echo $Data[3] ;?>" width="200px">
 </td>
-
-    
+<td> <?php echo $Data[4]; ?></td>
 <td><a href="serviceedit.php?id=<?php echo $Data[0]; ?>"><button class="btn btn-primary">Edit</button></a></td>
     <td><a href="servicedelete.php?id=<?php echo $Data[0]; ?>"><button class="btn btn-primary">Delete</button></a></td>
    

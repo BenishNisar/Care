@@ -63,7 +63,7 @@ color:blue;
           <div class="row g-3">
           <div class="col-sm-6 col-md-6 col-lg-6">
               <label for="text" class="form-label">Doctor Name</label>
-              <input type="text" class="form-control" name="doctor" id="user" placeholder="Enter a Doctor Name"  required>
+              <input type="text" class="form-control" name="doctor" " placeholder="Enter a Doctor Name"  required>
               <div class="invalid-feedback">
                 Valid first name is required.
               </div>
@@ -71,14 +71,14 @@ color:blue;
  
             <div class="col-sm-6 col-md-6 col-lg-6">
               <label for="text" class="form-label">Doctor Profile</label>
-              <input type="file" class="form-control" name="doctorprofile" id="user" placeholder="Enter a Disease Name"  required>
+              <input type="file" class="form-control" name="doctorprofile"  placeholder="Enter a Disease Name"  required>
               <div class="invalid-feedback">
                 Valid first name is required.
               </div>
             </div>
             <div class="col-sm-6 col-md-6 col-lg-6">
               <label for="text" class="form-label">First Name</label>
-              <input type="text" class="form-control" name="firstname" id="user" placeholder="Enter a First Name"  required>
+              <input type="text" class="form-control" name="firstname"  placeholder="Enter a First Name"  required>
               <div class="invalid-feedback">
                 Valid first name is required.
               </div>
@@ -86,7 +86,7 @@ color:blue;
 
             <div class="col-sm-6 col-md-6 col-lg-6">
               <label for="text" class="form-label">Last Name</label>
-              <input type="text" class="form-control" name="lastname" id="user" placeholder="Enter a Last Name"  required>
+              <input type="text" class="form-control" name="lastname"  placeholder="Enter a Last Name"  required>
               <div class="invalid-feedback">
                 Valid first name is required.
               </div>
@@ -101,7 +101,7 @@ color:blue;
 
             <div class="col-sm-6 col-md-6">
               <label for="text" class="form-label">Specialty</label>
-              <input type="text" class="form-control" name="specialty" id="text" placeholder="Enter a Text"  required>
+              <input type="text" class="form-control" name="specialty"  placeholder="Enter a Text"  required>
               <div class="invalid-feedback">
                 Valid first name is required.
               </div>
@@ -110,7 +110,7 @@ color:blue;
 
             <div class="col-sm-6 col-md-6 col-lg-6">
               <label for="text" class="form-label">Image</label>
-              <input type="file" class="form-control" name="image" id="user" placeholder="Enter a Disease Name"  required>
+              <input type="file" class="form-control" name="image"  placeholder="Enter a Disease Name"  required>
               <div class="invalid-feedback">
                 Valid first name is required.
               </div>
@@ -120,7 +120,7 @@ color:blue;
           
             <div class="col-sm-6 col-md-6 col-lg-6">
               <label for="email" class="form-label">Email</label>
-              <input type="email" class="form-control" name="email" id="user" placeholder="Enter Your Email"  required>
+              <input type="email" class="form-control" name="email" id="email" placeholder="Enter Your Email"  required>
               <div class="invalid-feedback">
                 Valid first name is required.
               </div>
@@ -144,7 +144,7 @@ color:blue;
 
             <div class="col-sm-6 col-md-6 col-lg-6">
               <label for="text" class="form-label">Phone Number</label>
-              <input type="text" class="form-control" name="phonenumber" id="user" placeholder="Enter a Phone Number"  required>
+              <input type="text" class="form-control" name="phonenumber" id="text" placeholder="Enter a Phone Number"  required>
               <div class="invalid-feedback">
                 Valid first name is required.
               </div>
@@ -168,7 +168,7 @@ color:blue;
               <!-- <input type="text" class="form-control" name="city" id="text" placeholder="Enter a City"  required> -->
               <Select class="form-control" name="city" >
               <?php
-                
+                include("connection.php");
                 $query="SELECT * FROM `cities`";
                 $reuslt=mysqli_query($Db,$query);
                 if(mysqli_num_rows($reuslt)){
@@ -311,7 +311,7 @@ if (isset($_POST["submit"])) {
     $City = $_POST["city"];
 
     $Query = "INSERT INTO `doctoraccount`(`id`, `username`, `doctorprofile`, `firstname`, `lastname`, `specialty`, `image`, `email`, `password`, `phonenumber`, `address`, `city`) 
-              VALUES (NULL,'$DoctorName','$DoctorProfile','$FirstName','$LastName','$Specialty','$Image','$Email','$Password','$PhoneNumber','$Address',$City)";
+              VALUES (NULL,'$DoctorName','$DoctorProfile','$FirstName','$LastName','$Specialty','$Image','$Email','$Password','$PhoneNumber','$Address','$City')";
 
     mysqli_query($Db, $Query);
 

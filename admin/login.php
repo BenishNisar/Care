@@ -11,7 +11,9 @@ if($_SESSION["admin"] == ""){
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-<title>detail</title>
+<title>Care</title>
+<link rel="shortcut icon" href="images/faviconlg.png" type="image/x-icon">
+
 </head>
 <style>
 /* Importing fonts from Google */

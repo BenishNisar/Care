@@ -70,7 +70,7 @@ $Data=mysqli_fetch_array($Result);
       <div class="col-md-6 col-lg-6"style="margin-left:20px;" >
 
         <form action="#" method="POST" enctype="multipart/form-data" class="needs-validation" novalidate>
-        <h2>Slider</h2> 
+        <h2>Service</h2> 
         <div class="row g-3">
           <div class="col-sm-12 col-md-12 col-lg-12">
               <label for="email" class="form-label">Title</label>
@@ -126,7 +126,14 @@ $Data=mysqli_fetch_array($Result);
           
           
           
-           
+            <div class="col-sm-12 col-md-12">
+              <label for="" class="form-label">Font Awesome</label>
+             
+              <textarea name="fontawesome" class="form-control" value="<?php echo $Data[4] ?>" rows="10"></textarea>
+              <div class="invalid-feedback">
+                Valid first name is required.
+              </div>
+            </div>
 
   
   
@@ -223,9 +230,9 @@ if(isset($_POST["submit"])){
  $Path="./images/".$Image;
  move_uploaded_file($Tmp_name, $Path);
 
-
-   $Update="UPDATE `service` SET 
-   `title`='$Title',`descripation`='$Description',`image`='$Image' WHERE `id`=$Id";
+ $FontAwesome=mysqli_real_escape_string($Db,$_POST["fontawesome"]);
+$Update="UPDATE `service` SET 
+   `title`='$Title',`descripation`='$Description',`image`='$Image',`fontawesome`=' $FontAwesome'   WHERE `id`=$Id";
 
 
 mysqli_query($Db,$Update);

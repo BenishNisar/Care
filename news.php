@@ -58,7 +58,7 @@ session_start();
                 while ($data = mysqli_fetch_assoc($response)) {
             ?>
             
-            <div class="col-lg-4 col-md-6 col-12">
+            <div class="col-lg-4 col-md-6 col-12" >
                 <div class="card mb-4"  >
                     <img src="./admin/images/<?php echo $data['image']; ?>" width="100%" >
                     <div style="margin-left: 10px;">

@@ -108,7 +108,15 @@
           
           
           
-           
+            <div class="col-sm-12 col-md-12">
+              <label for="" class="form-label">fontawesome</label>
+             
+              <textarea name="fontawesome" class="form-control" rows="10"></textarea>
+              <div class="invalid-feedback">
+                Valid first name is required.
+              </div>
+            </div>
+
 
   
   
@@ -214,8 +222,9 @@ if(isset($_POST["submit"])){
     $Tmp_name=$_FILES['image']['tmp_name'];
     $Path="./images/".$Image;
     move_uploaded_file($Tmp_name, $Path);
+    $FontAwesome=mysqli_real_escape_string($Db,$_POST["fontawesome"]);
 
-    $Query ="INSERT INTO `service`(`id`, `title`, `descripation`, `image`) VALUES (NULL,'$Title','$Description','$Image')";
+    $Query ="INSERT INTO `service`(`id`, `title`, `descripation`, `image`,`fontawesome`) VALUES (NULL,'$Title','$Description','$Image','$FontAwesome')";
     
 
     mysqli_query($Db, $Query);

@@ -78,14 +78,14 @@ if(mysqli_num_rows($Response)){
 					
 						<h4 class="text-light">Doctor Name:
 							<strong class="text-light"><?php echo $Data[1];?></strong></h4>
-						<h5 class="text-light">Specialty:
+						<h5 class="text-light">Specialty Name:
 							<strong>
 							<?php
 							echo $Data[5];
 							?>
 							</strong>
 						</h5>	
-						<h5 class="text-light">City:
+						<h5 class="text-light">City Name:
 							<strong><?php echo $Data[11];  ?></strong></h5>
 						
 						<p class="text-light">"Care Hospital" stands as a beacon of compassion and excellence in the realm of healthcare, committed to providing unparalleled medical services with a human touch. Nestled amidst serene surroundings, Care Hospital embraces a philosophy that places patient well-being at the forefront of its endeavors. From its inception, the hospital has been driven by a dedication to delivering comprehensive care that integrates cutting-edge medical technology with heartfelt empathy.At the heart of Care Hospital's ethos lies a team of highly skilled healthcare professionals who are not just experts in their respective fields but also compassionate caregivers. Every member of the Care Hospital family, be it the seasoned physicians, proficient nurses, or diligent support staff, is united by a shared commitment to ensuring each patient receives personalized attention and the highest quality of care.Care Hospital's state-of-the-art facilities and advanced medical equipment are seamlessly blended with an environment designed to foster healing and comfort. Whether it's the warm smiles that greet patients at reception, the tranquil ambiance of recovery rooms, or the meticulous attention to cleanliness and safety standards, every aspect of Care Hospital is meticulously crafted to instill confidence and reassurance in patients and their families.Moreover, Care Hospital goes beyond just treating ailments; it strives to promote holistic wellness by offering comprehensive healthcare services tailored to individual needs. From preventative care and health education programs to specialized treatments and rehabilitative services, Care Hospital endeavors to empower patients to lead healthier, more fulfilling lives.In essence, Care Hospital isn't just a medical facility; it's a sanctuary of healing and hope, where expertise meets empathy, and where every individual is treated with the utmost dignity and respect. With a steadfast commitment to excellence and a relentless pursuit of compassionate care, Care Hospital continues to set the standard for healthcare excellence in the community it serves.</p>

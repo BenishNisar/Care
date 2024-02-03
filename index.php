@@ -196,23 +196,44 @@ if(mysqli_num_rows($Response)){
 		<section class="Feautes section">
 			<div class="container">
 				<div class="row">
+
 					<div class="col-lg-12">
+
+
+
+
 						<div class="section-title">
-							<h2>We Are Always Ready to Help You & Your Family</h2>
+							<h2>We Are Always Ready to Help You & Your Famiy</h2>
 							<img src="img/section-img.png" alt="#">
 							<p>Lorem ipsum dolor sit amet consectetur adipiscing elit praesent aliquet. pretiumts</p>
 						</div>
+		
+
 					</div>
+	
+
 				</div>
 				<div class="row">
 					<div class="col-lg-4 col-12">
 						<!-- Start Single features -->
+						<?php
+ $Db = mysqli_connect("localhost", "root", "", "care");
+$Query="SELECT * FROM `service` WHERE `id` = 11";
+$Response=mysqli_query($Db,$Query);
+if(mysqli_num_rows($Response)){
+    while($Data=mysqli_fetch_array($Response)){
+
+ ?>
 						<div class="single-features">
 							<div class="signle-icon">
-								<i class="icofont icofont-ambulance-cross"></i>
+								<i class="icofont <?php echo $Data[4]; ?>"></i>
 							</div>
-							<h3>Emergency Help</h3>
-							<p>Lorem ipsum sit, consectetur adipiscing elit. Maecenas mi quam vulputate.</p>
+							<h3><?php echo $Data[1]; ?></h3>
+							<p><?php echo $Data[2];  ?></p>
+						
+							<?php
+	}}
+						?>
 						</div>
 						<!-- End Single features -->
 					</div>
