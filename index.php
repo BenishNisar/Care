@@ -203,7 +203,7 @@ if(mysqli_num_rows($Response)){
 
 
 						<div class="section-title">
-							<h2>We Are Always Ready to Help You & Your Famiy</h2>
+							<h2>We Are Always Ready to Help You & Your Family</h2>
 							<img src="img/section-img.png" alt="#">
 							<p>Lorem ipsum dolor sit amet consectetur adipiscing elit praesent aliquet. pretiumts</p>
 						</div>
@@ -266,7 +266,7 @@ if(mysqli_num_rows($Response)){
 
 					<?php
  $Db = mysqli_connect("localhost", "root", "", "care");
-$Query="SELECT * FROM `service` WHERE `id` = 12";
+$Query="SELECT * FROM `service` WHERE `id` = 13";
 $Response=mysqli_query($Db,$Query);
 if(mysqli_num_rows($Response)){
     while($Data=mysqli_fetch_array($Response)){
@@ -278,8 +278,8 @@ if(mysqli_num_rows($Response)){
 							<div class="signle-icon">
 								<i class="icofont icofont-stethoscope"></i>
 							</div>
-							<h3>Medical Treatment</h3>
-							<p>Lorem ipsum sit, consectetur adipiscing elit. Maecenas mi quam vulputate.</p>
+							<h3><?php echo $Data[1]; ?></h3>
+							<p><?php echo $Data[2]; ?></p>
 					
 					<?php
 	}}
